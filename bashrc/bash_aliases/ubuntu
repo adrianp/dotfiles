@@ -1,0 +1,7 @@
+# Ubuntu (Server) 12.04.2 LTS
+
+alias install='sudo apt-get -y install'
+alias up='sudo apt-get update && sudo apt-get -y dist-upgrade'
+alias remove='sudo apt-get remove'
+alias autoremove='sudo apt-get -y autoremove'
+alias ntp='sudo ntpdate 0.us.pool.ntp.org'

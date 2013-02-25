@@ -4,10 +4,13 @@ startup_message off
 # how many lines to scrollback
 defscrollback 10000
 
-# change statusbar
+# custom statusbar
 hardstatus off
 hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W} %c %{g}]'
 
 # autodetach on terminal exit
 autodetach off
+
+# turn off visual bell
+vbell off

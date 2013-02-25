@@ -1,0 +1,8 @@
+# set TAB to have VIM-like complete behaviour
+Tab: menu-complete
+
+# set SHIFT+TAB to have the default TAB behaviour
+"\e[Z": complete
+
+# display width of SHIFT+TAB suggestions, -1 is the default value
+set completion-display-width -1
