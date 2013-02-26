@@ -141,6 +141,7 @@ alias k='killall -v -u $USER'
 alias rm='rm -Iv'
 alias s='screen'
 alias service='sudo service'
+alias h='cd ~'
 
 # distribution-specific aliases
 # PUT THEM IN ~/.bash_aliases
