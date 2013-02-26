@@ -6,3 +6,6 @@ Tab: menu-complete
 
 # display width of SHIFT+TAB suggestions, -1 is the default value
 set completion-display-width -1
+
+# ignore case for bash completion
+set completion-ignore-case on
