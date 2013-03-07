@@ -112,7 +112,7 @@ fi
 ### PLEASE ADD CUSTOM CODE ONLY *AFTER* THIS LINE; everything above should be the default configuration file! ###
 
 # general settings
-#
+set -o vi
 
 # installation-specific settings
 #
