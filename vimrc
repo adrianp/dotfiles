@@ -56,3 +56,7 @@ set statusline+=%m%m%m%m%m%m%m%m%m%m
 set statusline+=%=
 set statusline+=%c,
 set statusline+=%l/%L
+
+" smarter search in terms of letter case
+set ignorecase
+set smartcase
