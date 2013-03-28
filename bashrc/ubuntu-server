@@ -134,6 +134,7 @@ export SVN_EDITOR=vim
 # installation-specific exports
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386
 #export PATH=$PATH:/home/adrianp/bin/storm-0.8.2/bin/
+export SVN_EDITOR=vim
 
 # general aliases
 alias ls='ls -Alh --color'
@@ -141,8 +142,9 @@ alias ..='cd ..'
 alias k='killall -v -u $USER'
 alias rm='rm -Iv'
 alias s='screen'
-alias service='sudo service'
+alias serv='sudo service'
 alias h='cd ~'
+alias l='ls'
 
 # distribution-specific aliases
 # PUT THEM IN ~/.bash_aliases
