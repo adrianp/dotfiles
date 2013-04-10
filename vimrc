@@ -48,6 +48,10 @@ set clipboard=unnamed
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! %!sudo tee > /dev/null %
 
+" close shortcuts
+:map <F3> :wq<CR>
+:map <F4> :q<CR>
+
 " custom status bar
 set noruler
 set laststatus=2
