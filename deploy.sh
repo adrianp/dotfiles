@@ -7,7 +7,8 @@ then
     exit 65
 fi
 
-mv inputrc ~/.inputrc
-mv screenrc ~/.screenrc
-mv vimrc ~/.vimrc
-mv bashrc/$1 ~/.bashrc
+cp inputrc ~/.inputrc
+cp screenrc ~/.screenrc
+cp vimrc ~/.vimrc
+cp bashrc/$1 ~/.bashrc
+cp bashrc/bash_aliases/$1 ~/.bash_aliases
