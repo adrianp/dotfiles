@@ -45,6 +45,20 @@ set clipboard=unnamed
 :map <F8> :tabn<CR>
 :map <F9> :tabe<space>
 
+" spell-checking toggle
+inoremap <silent> <F6> <c -O>:call SpellToggle()<cr>
+map <silent> <F6> :call SpellToggle()<cr>
+function SpellToggle()
+    if &spell == 1
+        set nospell
+    else
+        set spell spelllang=en_us
+    endif
+endfunction
+
+" code paste toggle (no indenting)
+set pastetoggle=<F5>
+
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! %!sudo tee > /dev/null %
 
