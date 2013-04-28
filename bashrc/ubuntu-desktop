@@ -136,11 +136,11 @@ function set_ps1 {
 # general exports
 export PROMPT_COMMAND=set_ps1; history -a
 export SVN_EDITOR=vim
+export EDITOR=vim
 
 # installation-specific exports
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386
+#export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386
 #export PATH=$PATH:/home/adrianp/bin/storm-0.8.2/bin/
-export SVN_EDITOR=vim
 
 # general aliases
 alias ls='ls -Alh --color'
