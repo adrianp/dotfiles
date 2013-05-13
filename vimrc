@@ -63,7 +63,7 @@ set pastetoggle=<F5>
 cmap w!! %!sudo tee > /dev/null %
 
 " close shortcuts
-:map <F3> :wq<CR>
+:map <F3> :w<CR>
 :map <F4> :q<CR>
 
 " custom status bar
