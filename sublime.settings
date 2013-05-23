@@ -243,7 +243,7 @@
     //
 
     // The theme controls the look of Sublime Text's UI (buttons, tabs, scroll bars, etc)
-    "theme": "Default.sublime-theme",
+    "theme": "Soda Dark.sublime-theme",
 
     // Set to 0 to disable smooth scrolling. Set to a value between 0 and 1 to
     // scroll slower, or set to larger than 1 to scroll faster
