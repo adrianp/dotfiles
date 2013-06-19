@@ -80,5 +80,5 @@ set ignorecase
 set smartcase
 
 " Inserts a newline on Enter, an above newline on Shift+Enter
-map <Enter> o<ESC>
-map <S-Enter> O<ESC>
+:map <Enter> o<ESC>
+:map <S-Enter> O<ESC>
