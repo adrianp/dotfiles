@@ -121,8 +121,13 @@ shopt -s cdspell
 
 # general functions
 function set_ps1 {
+    local venv=''
+    if [[ $VIRTUAL_ENV != "" ]]
+    then
+      venv=" [${VIRTUAL_ENV##*/}]"
+    fi
     local load=$(uptime | sed -e "s/.*load average: \(.*\...\), \(.*\...\), \(.*\...\)/\1/" -e "s/ //g")
-    export PS1="${load}|$(date +"%d.%H:%M")|\u@\h:\w$ ";
+    export PS1="${load}|$(date +"%d.%H:%M")|\u@\h:\w${venv}$ ";
 }
 
 # installation-specific functions
