@@ -1,0 +1,14 @@
+[alias]
+        k = log --graph --decorate --pretty=oneline --abbrev-commit
+        co = checkout
+        b = branch
+        ci = commit
+        d = diff        
+        st = status
+        up = pull
+        p = push
+[user]
+        email = adrian@panescu.com
+        name = Adrian-Tudor Panescu
+[color]
+        ui = auto
