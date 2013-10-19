@@ -57,7 +57,7 @@ function SpellToggle()
 endfunction
 
 " code paste toggle (no indenting)
-set pastetoggle=<F5>
+set pastetoggle=<F2>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! %!sudo tee > /dev/null %
@@ -65,6 +65,9 @@ cmap w!! %!sudo tee > /dev/null %
 " close shortcuts
 :map <F3> :w<CR>
 :map <F4> :q<CR>
+
+" reload document shortcut
+:map <F5> :edit<CR>
 
 " custom status bar
 set noruler
