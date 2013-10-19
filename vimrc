@@ -1,12 +1,12 @@
-"" disable arrow keys
-"noremap <Up> ""
-"noremap! <Up> <Esc>
-"noremap <Down> ""
-"noremap! <Down> <Esc>
-"noremap <Left> ""
-"noremap! <Left> <Esc>
-"noremap <Right> ""
-"noremap! <Right> <Esc>
+" disable arrow keys
+noremap <Up> ""
+noremap! <Up> <Esc>
+noremap <Down> ""
+noremap! <Down> <Esc>
+noremap <Left> ""
+noremap! <Left> <Esc>
+noremap <Right> ""
+noremap! <Right> <Esc>
 
 " display line numbers
 set number
@@ -29,13 +29,13 @@ set ts=4 sts=0 sw=4 expandtab
 " set textwidth=79
 
 " display right margin
-set colorcolumn=80
+set colorcolumn=50,80
 
 " disable syntax highlighting on long lines
 set synmaxcol=2048
 
-" make vim copy to system clipboard
-set clipboard=unnamed
+" make vim copy to system clipboard, need +xterm_clipboard
+"set clipboard=unnamed
 
 " clear screen when exiting VIM
 "au VimLeave * :!clear
@@ -45,7 +45,7 @@ set clipboard=unnamed
 :map <F8> :tabn<CR>
 :map <F9> :tabe<space>
 
-" spell-checking toggle
+" spell-check toggle
 inoremap <silent> <F6> <c -O>:call SpellToggle()<cr>
 map <silent> <F6> :call SpellToggle()<cr>
 function SpellToggle()
@@ -59,7 +59,7 @@ endfunction
 " code paste toggle (no indenting)
 set pastetoggle=<F2>
 
-" Allow saving of files as sudo when I forgot to start vim using sudo.
+" :w!! will save the file as root (when forgetting to sudo vim)
 cmap w!! %!sudo tee > /dev/null %
 
 " close shortcuts
@@ -73,7 +73,8 @@ cmap w!! %!sudo tee > /dev/null %
 set noruler
 set laststatus=2
 set statusline=%t
-set statusline+=%m%m%m%m%m%m%m%m%m%m
+" make it really obvious that the file was modifed
+set statusline+=%m%m%m%m%m%m%m%m%m%m%m%m%m%m
 set statusline+=%=
 set statusline+=%c,
 set statusline+=%l/%L
@@ -83,5 +84,5 @@ set ignorecase
 set smartcase
 
 " Inserts a newline on Enter, an above newline on Shift+Enter
-:map <Enter> o<ESC>
-:map <S-Enter> O<ESC>
+":map <Enter> o<ESC>
+":map <S-Enter> O<ESC>
