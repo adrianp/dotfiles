@@ -12,3 +12,5 @@
         name = Adrian-Tudor Panescu
 [color]
         ui = auto
+[diff] 
+        external = ~/bin/diff.py
