@@ -2,7 +2,7 @@
 startup_message off
 
 # how many lines to scrollback
-defscrollback 10000
+defscrollback 1000
 
 # custom statusbar
 hardstatus off
