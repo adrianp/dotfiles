@@ -2,5 +2,6 @@
 	"ignored_packages": [""],
 	"theme": "Soda Dark.sublime-theme",
 	"vintage_start_in_command_mode": true,
-	"rulers": [80]
+	"rulers": [80],
+	"draw_white_space": "all"
 }
