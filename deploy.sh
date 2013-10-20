@@ -1,14 +1,21 @@
 #!/bin/bash
 
-if [ $# -ne 1 ]
-then
-    echo "Please supply the Linux distribution as the first argument, see files below."
-    ls bashrc/ -l | grep -v ^d
-    exit 65
-fi
+# where are the dotfiles stored (location of this script)
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-cp inputrc ~/.inputrc
-cp screenrc ~/.screenrc
-cp vimrc ~/.vimrc
-cp bashrc/$1 ~/.bashrc
-cp bashrc/bash_aliases/$1 ~/.bash_aliases
+# the name of the files to deploy; notice that we skip .jshintrc
+DOTFILES=( "bash_aliases", "bashrc", "gitconfig", "inputrc", "screenrc", "vimrc" )
+
+mkdir ~/var
+mkdir ~/var/dotfiles_backup
+
+for file in "${DOTFILES[@]}"
+do
+	mv ~/.$file ~/var/dotfiles_backup/.$file # backup the existing dotfile
+	ln -s $DIR/$file ~/.$file # link the new dotfile
+done
+
+# deploy the Git diff script
+mkdir ~/bin
+ln -s $DIR/diff.py ~/bin/diff.py
+chmod +x ~/bin/diff.py
