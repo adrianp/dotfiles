@@ -27,3 +27,6 @@ source ~/.bashrc
 mkdir ~/bin
 ln -s $DIR/diff.py ~/bin/diff.py
 chmod +x ~/bin/diff.py
+
+# ln -s jshintrc ~/.jshintrc
+# ln -s Preferences.sublime-settings ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
