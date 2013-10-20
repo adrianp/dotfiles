@@ -5,7 +5,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # the name of the files to deploy; notice that we skip .bash_aliases and
 # .jshintrc
-DOTFILES=( "bashrc", "gitconfig", "inputrc", "screenrc", "vimrc" )
+DOTFILES=( "bashrc" "gitconfig" "inputrc" "screenrc" "vimrc" )
 
 mkdir ~/var
 mkdir ~/var/dotfiles_backup
@@ -18,6 +18,8 @@ done
 
 # create an empty .bash_aliases file
 touch ~/.bash_aliases
+
+source ~/.bashrc
 
 # deploy the Git diff script
 mkdir ~/bin
