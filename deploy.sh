@@ -16,6 +16,9 @@ do
 	ln -s $DIR/$file ~/.$file # link the new dotfile
 done
 
+# create an empty .bash_aliases file
+touch ~/.bash_aliases
+
 # deploy the Git diff script
 mkdir ~/bin
 ln -s $DIR/diff.py ~/bin/diff.py
