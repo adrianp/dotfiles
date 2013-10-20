@@ -12,12 +12,14 @@ mkdir ~/var/dotfiles_backup
 
 for file in "${DOTFILES[@]}"
 do
-	mv ~/.$file ~/var/dotfiles_backup/.$file # backup the existing dotfile
+	mv ~/.$file ~/var/dotfiles_backup/ # backup the existing dotfile
 	ln -s $DIR/$file ~/.$file # link the new dotfile
 done
 
 # create an empty .bash_aliases file
-touch ~/.bash_aliases
+touch $DIR/bash_aliases
+mv ~/.bash_aliases ~/var/dotfiles_backup/
+ln -s $DIR/bash_aliases ~/.bash_aliases
 
 source ~/.bashrc
 
