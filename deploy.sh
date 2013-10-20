@@ -3,8 +3,9 @@
 # where are the dotfiles stored (location of this script)
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# the name of the files to deploy; notice that we skip .jshintrc
-DOTFILES=( "bash_aliases", "bashrc", "gitconfig", "inputrc", "screenrc", "vimrc" )
+# the name of the files to deploy; notice that we skip .bash_aliases and
+# .jshintrc
+DOTFILES=( "bashrc", "gitconfig", "inputrc", "screenrc", "vimrc" )
 
 mkdir ~/var
 mkdir ~/var/dotfiles_backup
