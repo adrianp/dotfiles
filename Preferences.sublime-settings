@@ -3,5 +3,7 @@
 	"theme": "Soda Dark.sublime-theme",
 	"vintage_start_in_command_mode": true,
 	"rulers": [80],
-	"draw_white_space": "all"
+	"draw_white_space": "all",
+	"color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
+	"font_size": 12
 }
