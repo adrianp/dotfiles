@@ -59,7 +59,7 @@ fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # general aliases
-alias ls='ls -Alh --color'
+alias ls='ls -lh --color'
 alias ..='cd ..'
 alias k='killall -v -u $USER'
 alias rm='rm -Iv'
