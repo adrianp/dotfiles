@@ -14,3 +14,5 @@
         ui = auto
 [diff] 
         external = ~/bin/diff.py
+[merge]
+    tool = meld
