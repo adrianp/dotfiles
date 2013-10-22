@@ -69,6 +69,7 @@ alias v='vim'
 alias g='grep --color=auto -rn . -e'
 alias c='clear'
 alias gg='git gui &' # install git-gui for this
+alias f='find . -name'
 
 # other aliases go in a separate file
 if [ -f ~/.bash_aliases ]; then
