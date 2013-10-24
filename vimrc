@@ -83,6 +83,9 @@ set statusline+=%l/%L
 set ignorecase
 set smartcase
 
-" Inserts a newline on Enter, an above newline on Shift+Enter
+" inserts a newline on Enter, an above newline on Shift+Enter
 ":map <Enter> o<ESC>
 ":map <S-Enter> O<ESC>
+
+" allows to insert one single character when pressing Space
+:nmap <Space> i_<Esc>r
