@@ -9,3 +9,7 @@ set completion-display-width -1
 
 # ignore case for bash completion
 set completion-ignore-case on
+
+# BSD-like prefix autocompletion
+"\e[A":history-search-backward
+"\e[B":history-search-forward
