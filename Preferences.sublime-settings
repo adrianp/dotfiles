@@ -1,10 +1,15 @@
 {
-    "ignored_packages": [""],
-    "theme": "Soda Dark.sublime-theme",
-    "vintage_start_in_command_mode": false,
-    "rulers": [79,80],
+    "color_scheme": "Packages/Color Scheme - Default/Blackboard.tmTheme",
     "draw_white_space": "all",
-    "color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
     "font_size": 12,
-    "translate_tabs_to_spaces": true
+    "ignored_packages": [
+        ""
+    ],
+    "rulers": [
+        79,
+        80
+    ],
+    "theme": "Soda Dark.sublime-theme",
+    "translate_tabs_to_spaces": true,
+    "vintage_start_in_command_mode": false
 }
