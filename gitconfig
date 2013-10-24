@@ -1,18 +1,22 @@
 [alias]
-        k = log --graph --decorate --pretty=oneline --abbrev-commit
-        co = checkout
-        b = branch
-        ci = commit
-        d = diff        
-        st = status
-        up = pull
-        p = push
+    k = log --graph --decorate --pretty=oneline --abbrev-commit
+    co = checkout
+    b = branch
+    ci = commit
+    d = difftool
+    st = status
+    up = pull
+    p = push
 [user]
-        email = adrian@panescu.com
-        name = Adrian-Tudor Panescu
+    email = adrian@panescu.com
+    name = Adrian-Tudor Panescu
 [color]
-        ui = auto
-[diff] 
-        external = ~/bin/diff.py
+    ui = auto
 [merge]
     tool = meld
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[mergetool]
+    prompt = false
