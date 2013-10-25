@@ -1,12 +1,16 @@
 [alias]
-    k = log --graph --decorate --pretty=oneline --abbrev-commit
-    co = checkout
-    b = branch
+    a = add -A
+    b = branch -v
     ci = commit
+    co = checkout
     d = difftool
+    k = log --graph --decorate --pretty=oneline --abbrev-commit
+    p = push
+    reb = rebase -i
+    rem = remote -v
+    s = stash -U
     st = status
     up = pull
-    p = push
 [user]
     email = adrian@panescu.com
     name = Adrian-Tudor Panescu
