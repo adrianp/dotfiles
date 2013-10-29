@@ -83,9 +83,17 @@ set -o vi
 # the bash shell prompt; show the load(1), day-of-month, time, login, host path,
 # git branch, and virtualenv
 function set_ps1 {
-    local venv="$(__git_ps1)${VIRTUAL_ENV##*/}"
+    green="\[\e[32;1m\]"
+    red="\[\e[31;1m\]"
+    cyan="\[\e[36;1m\]"
+    orange="\[\e[91;1m\]"
+    nocol="\e[m"
+
+    local git="$(__git_ps1)"
+    local venv="${VIRTUAL_ENV##*/}"
     local load=$(uptime | sed -e "s/.*load average: \(.*\...\), \(.*\...\), \(.*\...\)/\1/" -e "s/ //g")
-    export PS1="${load}|$(date +"%d.%H:%M")|\u@\h:\w${venv}$ ";
+
+    export PS1="${green}${load}${nocol}|$(date +"%d.%H:%M")|\u@\h:${red}\w${nocol}${cyan}${git}${nocol}${venv}$ ";
 }
 export PROMPT_COMMAND=set_ps1; history -a
 
