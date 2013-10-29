@@ -87,13 +87,15 @@ function set_ps1 {
     red="\[\e[31;1m\]"
     cyan="\[\e[36;1m\]"
     orange="\[\e[91;1m\]"
+    purple="\[\e[35;1m\]"
+    yellow="\[\e[33;1m\]"
     nocol="\e[m"
 
     local git="$(__git_ps1)"
     local venv="${VIRTUAL_ENV##*/}"
     local load=$(uptime | sed -e "s/.*load average: \(.*\...\), \(.*\...\), \(.*\...\)/\1/" -e "s/ //g")
 
-    export PS1="${green}${load}${nocol}|$(date +"%d.%H:%M")|\u@\h:${red}\w${nocol}${cyan}${git}${nocol}${venv}$ ";
+    export PS1="${green}${load}${nocol}|$(date +"%H:%M.")${yellow}$(date +"%d")${nocol}|\u@\h:${red}\w${nocol}${cyan}${git}${nocol}${purple}${venv}${nocol}$ ";
 }
 export PROMPT_COMMAND=set_ps1; history -a
 
