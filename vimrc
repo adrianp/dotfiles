@@ -89,3 +89,6 @@ set smartcase
 
 " allows to insert one single character when pressing Space
 :nmap <Space> i_<Esc>r
+
+" easier to see syntax highlighting
+set background=dark
