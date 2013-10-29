@@ -59,7 +59,8 @@ fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # general aliases
-alias ls='ls -lh --color'
+alias ls='ls -A --color'
+alias ll='ls -oAhpv --color --group-directories-first'
 alias ..='cd ..'
 alias k='killall -v -u $USER'
 alias rm='rm -Iv'
@@ -70,6 +71,7 @@ alias g='grep --color=auto -rn . -e'
 alias c='clear'
 alias gg='git gui &' # install git-gui for this
 alias f='find . -name'
+alias src='source ~/.bashrc'
 
 # other aliases go in a separate file
 if [ -f ~/.bash_aliases ]; then
