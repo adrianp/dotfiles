@@ -25,7 +25,7 @@ HISTFILESIZE=2000
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# Allow to review a history substitution result by loading the resulting line                     
+# allow to review a history substitution result by loading the resulting line                     
 # into the editing buffer, rather than directly executing it.
 shopt -s histverify
 
@@ -62,9 +62,9 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias ll='ls -oAhpv --color --group-directories-first'
 alias ..='cd ..'
 alias k='killall -v -u $USER'
-alias rm='rm -Iv'
+alias rm='rm -I'
 alias s='screen'
-alias h='cd ~'
+alias ~='cd ~'
 alias v='vim'
 alias g='grep --color=auto -rn . -e'
 alias c='clear'
@@ -73,7 +73,7 @@ alias f='find . -name'
 alias src='source ~/.bashrc'
 alias _='sudo'
 
-# Creates a directory and cd inside
+# creates a directory and navigates to it
 function mkcd() {
   mkdir -p "$1"
   cd "$1";
@@ -87,7 +87,7 @@ fi
 # vim bash shell mode
 set -o vi
 
-# the bash shell prompt; show the load(1), day-of-month, time, login, host path,
+# the bash shell prompt; shows the load(1), time, day-of-month, login, host path,
 # git branch, and virtualenv
 function set_ps1 {
     green="\[\e[32;1m\]"
@@ -106,7 +106,7 @@ function set_ps1 {
 }
 export PROMPT_COMMAND=set_ps1; history -a
 
-# Include user's bin folder.
+# include user's bin/ directory
 if [ -d "$HOME/bin" ] ; then
     export PATH=$HOME/bin:$PATH
 fi
