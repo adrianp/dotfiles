@@ -71,6 +71,13 @@ alias c='clear'
 alias gg='git gui &' # install git-gui for this
 alias f='find . -name'
 alias src='source ~/.bashrc'
+alias _='sudo'
+
+# Creates a directory and cd inside
+function mkcd() {
+  mkdir -p "$1"
+  cd "$1";
+}
 
 # other aliases go in a separate file
 if [ -f ~/.bash_aliases ]; then
@@ -98,6 +105,11 @@ function set_ps1 {
     export PS1="${green}${load}${nocol}|$(date +"%H:%M.")${yellow}$(date +"%d")${nocol}|\u@\h:${red}\w${nocol}${cyan}${git}${nocol}${purple}${venv}${nocol}$ ";
 }
 export PROMPT_COMMAND=set_ps1; history -a
+
+# Include user's bin folder.
+if [ -d "$HOME/bin" ] ; then
+    export PATH=$HOME/bin:$PATH
+fi
 
 # we prefer vim for SVN, Git, etc.
 export SVN_EDITOR=vim
