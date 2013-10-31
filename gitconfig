@@ -2,10 +2,11 @@
     a = add -A
     b = branch -v
     ci = commit -as
-    cis = commit -as --squash HEAD^1
+    cis = commit -as --squash HEAD
     co = checkout
     d = difftool
     k = log --graph --decorate --pretty=oneline --abbrev-commit
+    kl = log --decorate --pretty=oneline --abbrev-commit
     p = push
     reb = rebase -i
     rebs = rebase --autosquash
