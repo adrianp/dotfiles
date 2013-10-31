@@ -1,7 +1,7 @@
 [alias]
     a = add -A
     b = branch -v
-    ci = commit
+    ci = commit -as
     co = checkout
     d = difftool
     k = log --graph --decorate --pretty=oneline --abbrev-commit
