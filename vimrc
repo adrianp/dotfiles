@@ -92,3 +92,7 @@ set smartcase
 
 " easier to see syntax highlighting
 set background=dark
+
+" toggle line numbers
+set number
+nnoremap <F10> :set nonumber!<CR>
