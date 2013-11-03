@@ -1,25 +1,27 @@
 {
-    "color_scheme": "Packages/Color Scheme - Default/Blackboard.tmTheme",
-    "draw_white_space": "all",
-    "font_size": 12,
-    "ignored_packages": [
-        ""
-    ],
-    "rulers": [
-        79,
-        80
-    ],
-    "theme": "Soda Dark.sublime-theme",
-    "translate_tabs_to_spaces": true,
-    "vintage_start_in_command_mode": false,
-    "draw_minimap_border": true,
-    "always_show_minimap_viewport": true,
-    "caret_style": "wide",
-    "ensure_newline_at_eof_on_save": true,
-    "scroll_speed": 2,
-    "tree_animation_enabled": false,
-    "animation_enabled": false,
-    "highlight_modified_tabs": true,
-    "bold_folder_labels": true,
-    "enable_telemetry": "disabled"
+	"always_show_minimap_viewport": true,
+	"animation_enabled": false,
+	"bold_folder_labels": true,
+	"caret_style": "wide",
+	"color_scheme": "Packages/Color Scheme - Default/Blackboard.tmTheme",
+	"draw_minimap_border": true,
+	"draw_white_space": "all",
+	"enable_telemetry": "disabled",
+	"ensure_newline_at_eof_on_save": true,
+	"font_size": 12,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		""
+	],
+	"rulers":
+	[
+		79,
+		80
+	],
+	"scroll_speed": 2,
+	"theme": "Soda Dark.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"tree_animation_enabled": false,
+	"vintage_start_in_command_mode": false
 }
