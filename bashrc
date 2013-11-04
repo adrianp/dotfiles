@@ -99,6 +99,9 @@ function set_ps1 {
     nocol="\e[m"
 
     local git="$(__git_ps1)"
+    if [[ -z $git ]]; then
+        git=" "
+    fi
     if [[ -z ${VIRTUAL_ENV##*/} ]]; then
         local venv=""
     else
@@ -106,7 +109,7 @@ function set_ps1 {
     fi
     local load=$(uptime | sed -e "s/.*load average: \(.*\...\), \(.*\...\), \(.*\...\)/\1/" -e "s/ //g")
 
-    export PS1="${green}${load}${nocol}|$(date +"%H:%M.")${yellow}$(date +"%d")${nocol}|\u@\h:${red}\w${nocol}${cyan}${git}${nocol}${purple}${venv}${nocol}$ ";
+    export PS1="${green}${load}${nocol}|$(date +"%H:%M.")${yellow}$(date +"%d")${nocol}|\u@\h:${red}\w${nocol}${cyan}${git}${nocol}${purple}${venv}${nocol}\n$ ";
 }
 export PROMPT_COMMAND=set_ps1; history -a
 
