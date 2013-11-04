@@ -99,7 +99,11 @@ function set_ps1 {
     nocol="\e[m"
 
     local git="$(__git_ps1)"
-    local venv="${VIRTUAL_ENV##*/}"
+    if [[ -z ${VIRTUAL_ENV##*/} ]]; then
+        local venv=""
+    else
+        local venv="(${VIRTUAL_ENV##*/})"
+    fi
     local load=$(uptime | sed -e "s/.*load average: \(.*\...\), \(.*\...\), \(.*\...\)/\1/" -e "s/ //g")
 
     export PS1="${green}${load}${nocol}|$(date +"%H:%M.")${yellow}$(date +"%d")${nocol}|\u@\h:${red}\w${nocol}${cyan}${git}${nocol}${purple}${venv}${nocol}$ ";
