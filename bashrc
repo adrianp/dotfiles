@@ -65,6 +65,7 @@ alias k='killall -v -u $USER'
 alias rm='rm -I'
 alias s='screen'
 alias ~='cd ~'
+alias b='cd -'
 alias v='vim'
 alias g='grep --color=auto -rn . -e'
 alias c='clear'
@@ -99,10 +100,17 @@ function set_ps1 {
     nocol="\e[m"
 
     local git="$(__git_ps1)"
-    local venv="${VIRTUAL_ENV##*/}"
+    if [[ -z $git ]]; then
+        git=" "
+    fi
+    if [[ -z ${VIRTUAL_ENV##*/} ]]; then
+        local venv=""
+    else
+        local venv="(${VIRTUAL_ENV##*/})"
+    fi
     local load=$(uptime | sed -e "s/.*load average: \(.*\...\), \(.*\...\), \(.*\...\)/\1/" -e "s/ //g")
 
-    export PS1="${green}${load}${nocol}|$(date +"%H:%M.")${yellow}$(date +"%d")${nocol}|\u@\h:${red}\w${nocol}${cyan}${git}${nocol}${purple}${venv}${nocol}$ ";
+    export PS1="${green}${load}${nocol}|$(date +"%H:%M.")${yellow}$(date +"%d")${nocol}|\u@\h:${red}\w${nocol}${cyan}${git}${nocol}${purple}${venv}${nocol}\n$ ";
 }
 export PROMPT_COMMAND=set_ps1; history -a
 
