@@ -58,6 +58,23 @@ fi
 # add an "alert" alias for long running commands; use like so: sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# Working autocompletion for aliases, see:
+# http://ubuntuforums.org/showthread.php?t=733397
+function make-completion-wrapper () {
+    local function_name="$2"
+    local arg_count=$(($#-3))
+    local comp_function_name="$1"
+    shift 2
+    local function="
+function $function_name {
+    ((COMP_CWORD+=$arg_count))
+    COMP_WORDS=( "$@" \${COMP_WORDS[@]:1} )
+    "$comp_function_name"
+    return 0
+}"
+    eval "$function"
+}
+
 # general aliases
 alias ll='ls -oAhpv --color --group-directories-first'
 alias ..='cd ..'
