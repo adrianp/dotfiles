@@ -8,8 +8,10 @@
     k = log --graph --decorate --pretty=oneline --abbrev-commit
     kl = log --decorate --pretty=oneline --abbrev-commit
     p = push
-    reb = rebase -i
-    rebs = rebase --autosquash
+    pa = push --all
+    r = rebase
+    ri = rebase -i --autosquash
+    rc = rebase --continue
     rem = remote -v
     s = stash -U
     st = status

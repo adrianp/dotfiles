@@ -96,3 +96,8 @@ set background=dark
 " toggle line numbers
 set number
 nnoremap <F10> :set nonumber!<CR>
+
+" exuberant ctags binding
+set tags=tags
+
+set background=light
