@@ -99,3 +99,5 @@ nnoremap <F10> :set nonumber!<CR>
 
 " exuberant ctags binding
 set tags=tags
+
+set background=light

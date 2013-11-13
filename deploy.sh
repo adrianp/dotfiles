@@ -31,3 +31,4 @@ chmod +x ~/bin/diff.py
 # ln -s jshintrc ~/.jshintrc
 # rm ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 # ln -s Preferences.sublime-settings ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+# cp terminalrc ~/.config/xfce4/terminal/terminalrc
