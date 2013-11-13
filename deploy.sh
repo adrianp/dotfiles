@@ -23,11 +23,6 @@ ln -s $DIR/bash_aliases ~/.bash_aliases
 
 source ~/.bashrc
 
-# deploy the Git diff script
-mkdir ~/bin
-ln -s $DIR/diff.py ~/bin/diff.py
-chmod +x ~/bin/diff.py
-
 # ln -s jshintrc ~/.jshintrc
 # rm ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 # ln -s Preferences.sublime-settings ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
