@@ -25,7 +25,7 @@ HISTFILESIZE=2000
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# allow to review a history substitution result by loading the resulting line                     
+# allow to review a history substitution result by loading the resulting line
 # into the editing buffer, rather than directly executing it.
 shopt -s histverify
 
@@ -75,12 +75,13 @@ function $function_name {
     eval "$function"
 }
 
+
 # general aliases
 alias ll='ls -oAhpv --color --group-directories-first'
 alias ..='cd ..'
 alias k='killall -v -u $USER'
 alias rm='rm -I'
-alias s='screen'
+alias s='screen -R'
 alias ~='cd ~'
 alias b='cd -'
 alias v='vim'
@@ -95,6 +96,16 @@ alias _='sudo'
 function mkcd() {
   mkdir -p "$1"
   cd "$1";
+}
+
+# navigates to a directory and lists it
+function cl() {
+  if [ -d $1 ]; then
+    cd $1
+  else
+    cd $HOME
+  fi
+  ls
 }
 
 # other aliases go in a separate file
@@ -130,12 +141,13 @@ function set_ps1 {
 export PROMPT_COMMAND=set_ps1; history -a
 
 # include user's bin/ directory
-if [ -d "$HOME/bin" ] ; then
+if [ -d "$HOME/bin" ]; then
     export PATH=$HOME/bin:$PATH
 fi
 
 # we prefer vim for SVN, Git, etc.
 export SVN_EDITOR=vim
 export EDITOR=vim
+export VISUAL=vim
 
 #export PATH=$PATH:/home/...
