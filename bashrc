@@ -93,20 +93,24 @@ alias src='source ~/.bashrc'
 alias _='sudo'
 alias p='ps -alyH --forest'
 
+function exterminate() {
+    kill -9 -$(pgrep $1)
+}
+
 # creates a directory and navigates to it
 function mkcd() {
-  mkdir -p "$1"
-  cd "$1";
+    mkdir -p "$1"
+    cd "$1";
 }
 
 # navigates to a directory and lists it
 function cl() {
-  if [ -d $1 ]; then
-    cd $1
-  else
-    cd $HOME
-  fi
-  ls
+    if [ -d $1 ]; then
+        cd $1
+    else
+        cd $HOME
+    fi
+    ls
 }
 
 # other aliases go in a separate file
