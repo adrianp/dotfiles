@@ -91,6 +91,7 @@ alias gg='git gui &' # install git-gui for this
 alias f='find . -name'
 alias src='source ~/.bashrc'
 alias _='sudo'
+alias p='ps -alyH --forest'
 
 # creates a directory and navigates to it
 function mkcd() {
