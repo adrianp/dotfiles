@@ -91,10 +91,10 @@ alias gg='git gui &' # install git-gui for this
 alias f='find . -name'
 alias src='source ~/.bashrc'
 alias _='sudo'
-alias p='ps -alyH --forest'
+alias p='ps -lyH --forest'
 
 function exterminate() {
-    kill -9 -$(pgrep $1)
+    kill -9 -$(ps | grep $1 | grep -v grep | awk '{print $1}')
 }
 
 # creates a directory and navigates to it
