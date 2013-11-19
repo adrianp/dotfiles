@@ -77,8 +77,7 @@ function $function_name {
 
 
 # general aliases
-alias ll='ls -oAhpv --color --group-directories-first'
-alias ..='cd ..'
+alias l='ls -oAhpv --color --group-directories-first'
 alias k='killall -v -u $USER'
 alias rm='rm -I'
 alias s='screen -R'
@@ -92,6 +91,11 @@ alias f='find . -name'
 alias src='source ~/.bashrc'
 alias _='sudo'
 alias p='ps -lyH --forest'
+
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
 
 function exterminate() {
     kill -9 -$(ps | grep $1 | grep -v grep | awk '{print $1}')
