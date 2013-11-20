@@ -78,7 +78,7 @@ function $function_name {
 
 # general aliases
 alias l='ls -oAhpv --color --group-directories-first'
-alias k='killall -v -u $USER'
+alias k='killall -v -i -u $USER'
 alias rm='rm -I'
 alias s='screen -R'
 alias ~='cd ~'
