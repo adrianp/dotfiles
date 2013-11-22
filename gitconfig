@@ -14,6 +14,8 @@
     r = rebase
     ri = rebase -i --autosquash
     rc = rebase --continue
+    rs = rebase --skip
+    rh = reset HEAD
     rem = remote -v
     s = stash -U
     st = status
