@@ -1,8 +1,9 @@
 [alias]
     a = add -A
     b = branch -v
+    c = commit -s
     ci = commit -as
-    cis = commit -as --squash HEAD
+    cis = commit -as --squash
     co = checkout
     d = difftool
     f = fetch
