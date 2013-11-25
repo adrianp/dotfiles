@@ -21,6 +21,10 @@ touch $DIR/bash_aliases
 mv ~/.bash_aliases ~/var/dotfiles_backup/
 ln -s $DIR/bash_aliases ~/.bash_aliases
 
+mkdir ~/bin
+cp $DIR/git-completion.sh ~/bin/git-completion.sh
+chmod +x ~/bin/git-completion.sh
+
 source ~/.bashrc
 
 # ln -s jshintrc ~/.jshintrc

@@ -75,6 +75,7 @@ function $function_name {
     eval "$function"
 }
 
+source ~/bin/git-completion.sh
 
 # general aliases
 alias l='ls -oAhpv --color --group-directories-first'
@@ -91,6 +92,9 @@ alias f='find . -name'
 alias src='source ~/.bashrc'
 alias _='sudo'
 alias p='ps -lyH --forest'
+
+alias g='git'
+complete -o default -o nospace -F _git g
 
 alias ..='cd ..'
 alias ...='cd ../../'
