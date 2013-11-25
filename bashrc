@@ -85,7 +85,7 @@ alias s='screen -R'
 alias ~='cd ~'
 alias b='cd -'
 alias v='vim'
-alias g='grep --color=auto -rn . -e'
+alias gp='grep --color=auto -rn . -e'
 alias c='clear'
 alias gg='git gui &' # install git-gui for this
 alias f='find . -name'
