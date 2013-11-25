@@ -12,11 +12,12 @@
     p = push
     pa = push --all
     r = rebase
-    ri = rebase -i --autosquash
+    ra = rebase --abort
     rc = rebase --continue
-    rs = rebase --skip
-    rh = reset HEAD
     rem = remote -v
+    rh = reset HEAD
+    ri = rebase -i --autosquash
+    rs = rebase --skip
     s = stash -U
     st = status
     up = pull
