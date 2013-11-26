@@ -1,9 +1,10 @@
 [alias]
-    a = add -A
+    a = add .
     b = branch -v
     c = commit -s
     ci = commit -as
     cis = commit -as --squash
+    cish = commit -as --squash HEAD
     co = checkout
     d = difftool
     f = fetch
@@ -15,10 +16,11 @@
     ra = rebase --abort
     rc = rebase --continue
     rem = remote -v
-    rh = reset HEAD
     ri = rebase -i --autosquash
     rs = rebase --skip
-    s = stash -U
+    rts = reset --soft
+    s = stash -u
+    sa = stash apply
     st = status
     up = pull
 [user]
@@ -34,6 +36,8 @@
     prompt = false
 [mergetool]
     prompt = false
+[push]
+    default = simple
 [remote "dotfiles"]
     url=git@github.com:adrianp/dotfiles.git
     url=git@bitbucket.org:adrianp_/dotfiles.git
