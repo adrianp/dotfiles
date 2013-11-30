@@ -5,6 +5,8 @@
     ci = commit -as
     cis = commit -as --squash
     cish = commit -as --squash HEAD
+    cln = clean -n
+    clf = clean -f
     co = checkout
     d = difftool
     f = fetch
@@ -19,6 +21,7 @@
     ri = rebase -i --autosquash
     rs = rebase --skip
     rts = reset --soft
+    rth = reset HEAD
     s = stash -u
     sa = stash apply
     st = status
