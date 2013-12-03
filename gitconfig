@@ -4,9 +4,10 @@
 
 [alias]
     a = add .
-    b = branch -v
+    b = branch -av
     c = commit -s
     ci = commit -as
+    cia = commit --amend
     cis = commit -as --squash
     cish = commit -as --squash HEAD
     cln = clean -n
@@ -25,8 +26,7 @@
     rem = remote -v
     ri = rebase -i --autosquash
     rs = rebase --skip
-    rts = reset --soft
-    rth = reset HEAD
+    rt = reset
     s = stash -u
     sa = stash apply
     st = status

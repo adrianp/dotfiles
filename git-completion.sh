@@ -881,7 +881,7 @@ _git_apply ()
         __gitcomp "
             --stat --numstat --summary --check --index
             --cached --index-info --reverse --reject --unidiff-zero
-            --apply --no-add --exclude=
+            --apply --no-add --exclude= --staged
             --ignore-whitespace --ignore-space-change
             --whitespace= --inaccurate-eof --verbose
             "
@@ -901,7 +901,7 @@ _git_add ()
     esac
 
     # XXX should we check for --update and --all options ?
-    __git_complete_index_file "--others --modified --directory --no-empty-directory"
+    __git_complete_index_file "--others --modified"
 }
 
 _git_archive ()
@@ -1063,7 +1063,7 @@ _git_clean ()
     esac
 
     # XXX should we check for -x option ?
-    __git_complete_index_file "--others --directory"
+    __git_complete_index_file "--others"
 }
 
 _git_clone ()
@@ -1188,7 +1188,7 @@ _git_diff ()
     __git_complete_revlist_file
 }
 
-__git_mergetools_common="diffuse diffmerge ecmerge emerge kdiff3 meld opendiff
+__git_mergetools_common="diffuse ecmerge emerge kdiff3 meld opendiff
             tkdiff vimdiff gvimdiff xxdiff araxis p4merge bc3 codecompare
 "
 
@@ -1294,7 +1294,7 @@ _git_grep ()
     case "$cur" in
     --*)
         __gitcomp "
-            --cached
+            --cached --staged
             --text --ignore-case --word-regexp --invert-match
             --full-name --line-number
             --extended-regexp --basic-regexp --fixed-strings
@@ -1691,7 +1691,31 @@ _git_send_email ()
 
 _git_stage ()
 {
-    _git_add
+    __git_has_doubledash && return
+
+    local subcommands="add reset diff rm apply edit"
+    local subcommand="$(__git_find_on_cmdline "$subcommands")"
+    if [ -z "$subcommand" ]; then
+        __gitcomp "$subcommands"
+        return
+    fi
+
+    case "$subcommand" in
+    add)
+        _git_add;;
+    reset)
+        _git_reset;;
+    diff)
+        _git_diff;;
+    rm)
+        _git_rm;;
+    apply)
+        _git_apply;;
+    edit)
+        ;;
+    *)
+        _git_add;
+    esac
 }
 
 __git_config_get_set_variables ()
@@ -2207,7 +2231,8 @@ _git_reset ()
 
     case "$cur" in
     --*)
-        __gitcomp "--merge --mixed --hard --soft --patch"
+        __gitcomp "--merge --mixed --hard --soft --patch --keep --merge
+            --stage --no-stage --work --no-work"
         return
         ;;
     esac
@@ -2229,7 +2254,7 @@ _git_rm ()
 {
     case "$cur" in
     --*)
-        __gitcomp "--cached --dry-run --ignore-unmatch --quiet"
+        __gitcomp "--cached --staged --dry-run --ignore-unmatch --quiet"
         return
         ;;
     esac
@@ -2296,7 +2321,7 @@ _git_show_branch ()
 
 _git_stash ()
 {
-    local save_opts='--keep-index --no-keep-index --quiet --patch'
+    local save_opts='--keep-index --no-keep-index --stage --no-stage --quiet --patch'
     local subcommands='save list show apply clear drop pop create branch'
     local subcommand="$(__git_find_on_cmdline "$subcommands")"
     if [ -z "$subcommand" ]; then
@@ -2316,7 +2341,7 @@ _git_stash ()
             __gitcomp "$save_opts"
             ;;
         apply,--*|pop,--*)
-            __gitcomp "--index --quiet"
+            __gitcomp "--index --stage --quiet"
             ;;
         show,--*|drop,--*|branch,--*)
             ;;
@@ -2530,6 +2555,7 @@ __git_main ()
 
     local expansion=$(__git_aliased_command "$command")
     if [ -n "$expansion" ]; then
+        words[1]=$expansion
         completion_func="_git_${expansion//-/_}"
         declare -f $completion_func >/dev/null && $completion_func
     fi
