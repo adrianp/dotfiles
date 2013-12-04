@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 [alias]
-    a = add .
+    a = add
     b = branch -avv
     c = commit -s
     ci = commit -as
@@ -18,8 +18,10 @@
     gp = grep --untracked --ignore-case --line-number --break
     k = log --graph --decorate --pretty=oneline --abbrev-commit
     kl = log --decorate --pretty=oneline --abbrev-commit
+    l = log
     p = push
     pa = push --all
+    paf = push --all --force
     r = rebase
     ra = rebase --abort
     rc = rebase --continue

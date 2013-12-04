@@ -105,3 +105,5 @@ nnoremap <F10> :set nonumber!<CR>
 set tags=tags
 
 set background=light
+
+iab sob$ Signed-off-by: Adrian-Tudor Panescu <adrian@panescu.com>
