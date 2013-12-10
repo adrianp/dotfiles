@@ -100,6 +100,8 @@ alias p='ps -lyH --forest'
 alias g='git'
 complete -o default -o nospace -F _git g
 
+alias gnwd='~/bin/git-new-workdir.sh'
+
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'

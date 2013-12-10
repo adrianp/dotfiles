@@ -26,8 +26,10 @@ mv ~/.bash_aliases ~/var/dotfiles_backup/
 ln -s $DIR/bash_aliases ~/.bash_aliases
 
 mkdir ~/bin
-cp $DIR/git-completion.sh ~/bin/git-completion.sh
+cp $DIR/scripts/git-completion.sh ~/bin/git-completion.sh
 chmod +x ~/bin/git-completion.sh
+cp $DIR/scripts/git-new-workdir.sh ~/bin/git-new-workdir.sh
+chmod +x ~/bin/git-new-workdir.sh
 
 source ~/.bashrc
 
