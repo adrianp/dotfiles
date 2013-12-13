@@ -80,6 +80,7 @@ function $function_name {
 }
 
 source ~/bin/git-completion.sh
+source ~/bin/git-prompt.sh
 
 # general aliases
 alias l='ls -oAhpv --color --group-directories-first'
@@ -144,7 +145,7 @@ function set_ps1 {
     purple="\[\e[38;5;91;1m\]"
     nocol="\e[m"
 
-    local git="$(__git_ps1)"
+    local git=$(__git_ps1 " (%s)")
     if [[ -z $git ]]; then
         git=" "
     fi
@@ -168,5 +169,11 @@ fi
 export SVN_EDITOR=vim
 export EDITOR=vim
 export VISUAL=vim
+
+# git-prompt exports
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWUPSTREAM="auto git"
 
 #export PATH=$PATH:/home/...
