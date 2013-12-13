@@ -30,6 +30,8 @@ cp $DIR/scripts/git-completion.sh ~/bin/git-completion.sh
 chmod +x ~/bin/git-completion.sh
 cp $DIR/scripts/git-new-workdir.sh ~/bin/git-new-workdir.sh
 chmod +x ~/bin/git-new-workdir.sh
+cp $DIR/scripts/git-prompt.sh ~/bin/git-prompt.sh
+chmod +x ~/bin/git-prompt.sh
 
 source ~/.bashrc
 
