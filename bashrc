@@ -97,6 +97,9 @@ alias f='find . -name'
 alias src='source ~/.bashrc'
 alias _='sudo'
 alias p='ps -lyH --forest'
+alias pud='pushd'
+alias pod='popd'
+alias dr='dirs'
 
 alias g='git'
 complete -o default -o nospace -F _git g
