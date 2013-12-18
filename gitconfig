@@ -4,7 +4,8 @@
 
 [alias]
     a = add
-    b = branch -avv
+    b = branch
+    ba = branch -avv
     c = commit -s
     ci = commit -as
     cia = commit --amend
