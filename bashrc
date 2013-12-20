@@ -83,6 +83,7 @@ source ~/bin/git-completion.sh
 source ~/bin/git-prompt.sh
 
 # general aliases
+alias d='du -h'
 alias l='ls -oAhpv --color --group-directories-first'
 alias k='killall -v -i -u $USER'
 alias rm='rm -I'
