@@ -14,6 +14,7 @@
     cln = clean -n
     clf = clean -f
     co = checkout
+    cp = cherry-pick
     d = difftool
     f = fetch
     gp = grep --untracked --ignore-case --line-number --break
