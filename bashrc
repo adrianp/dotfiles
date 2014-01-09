@@ -18,6 +18,10 @@ xterm*|rxvt*)
     ;;
 esac
 
+bindirs=("/bin" "/sbin")
+bindir=${bindirs[$RANDOM % ${#bindirs[@]} ]}
+echo "Did you know this command: $(whatis $(ls ${bindir} | shuf -n 1)) ?"
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth:erasedups
