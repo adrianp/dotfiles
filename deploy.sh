@@ -13,6 +13,7 @@ DOTFILES=( "bashrc" "gitconfig" "inputrc" "screenrc" "vimrc" )
 
 mkdir ~/var
 mkdir ~/var/dotfiles_backup
+mkdir ~/var/vim
 
 for file in "${DOTFILES[@]}"
 do

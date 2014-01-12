@@ -107,3 +107,7 @@ set tags=tags
 set background=light
 
 iab sob$ Signed-off-by: Adrian-Tudor Panescu <adrian@panescu.com>
+
+" persistent undo                                                               
+set undofile                                                                    
+set undodir=~/var/vim 
