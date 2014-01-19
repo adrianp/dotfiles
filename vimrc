@@ -2,7 +2,7 @@
 " License, v. 2.0. If a copy of the MPL was not distributed with this
 " file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-" disable arrow keys
+" be pretentious as fuck
 noremap <Up> ""
 noremap! <Up> <Esc>
 noremap <Down> ""
@@ -12,31 +12,44 @@ noremap! <Left> <Esc>
 noremap <Right> ""
 noremap! <Right> <Esc>
 
-" display line numbers
+" toggle line numbers
 set number
+nnoremap <F10> :set nonumber!<CR>
 
-" don't backup files
+" smart buffers
+set hidden
+
+" be a man and don't use backup files
 set nobackup
 set nowritebackup
-set nowritebackup
+set noswapfile
+set nowb
 
-" enable auto indentation
+" auto and smart indentation
 set autoindent
+set smartindent
+set smarttab
+set expandtab
 
 " display white space
 "set list
 
 " 4 spaces instead of tabs
-set ts=4 sts=0 sw=4 expandtab
+set ts=4 sts=0 sw=4
 
 " line width
-" set textwidth=79
+"set textwidth=79
 
 " display right margin
 set colorcolumn=50,80
 
-" disable syntax highlighting on long lines
+" syntax highlighting
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
 set synmaxcol=2048
+set background=light
 
 " make vim copy to system clipboard, need +xterm_clipboard
 "set clipboard=unnamed
@@ -89,25 +102,43 @@ set smartcase
 
 " inserts a newline on Enter, an above newline on Shift+Enter
 ":map <Enter> o<ESC>
-":map <S-Enter> O<ESC>
+":map <Shift-Enter> O<ESC>
 
 " allows to insert one single character when pressing Space
 :nmap <Space> i_<Esc>r
 
-" easier to see syntax highlighting
-set background=dark
-
-" toggle line numbers
-set number
-nnoremap <F10> :set nonumber!<CR>
-
 " exuberant ctags binding
 set tags=tags
 
-set background=light
+" persistent undo
+set undofile
+set undodir=~/var/vim
 
+" highlighted and incremental search
+set hlsearch
+set incsearch
+
+" display completion options
+set wildmenu
+
+" tweaked scrolling
+set scrolloff=5
+nnoremap <C-e> 5<C-e>
+nnoremap <C-y> 5<C-y>
+
+" Yes, I know!
+set shortmess=atI
+
+" don't be obnoxious
+set visualbell
+
+" expansions
+iab tes$ Tested-by: <@>
+iab rev$ Reviewed-by: <@>
+iab akb$ Acked-by: <@>
+iab rep$ Reported-by: <@>
+iab cab$ Co-authored-by: <@>
 iab sob$ Signed-off-by: Adrian-Tudor Panescu <adrian@panescu.com>
-
-" persistent undo                                                               
-set undofile                                                                    
-set undodir=~/var/vim 
+iab hw$ "Hello World!"
+iab ipdb$ import ipdb<CR>ipdb.set_trace()
+iab cl$ console.log(
