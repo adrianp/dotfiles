@@ -142,3 +142,8 @@ iab sob$ Signed-off-by: Adrian-Tudor Panescu <adrian@panescu.com>
 iab hw$ "Hello World!"
 iab ipdb$ import ipdb<CR>ipdb.set_trace()
 iab cl$ console.log(
+
+" ctrlp.vim: http://kien.github.io/ctrlp.vim/#installation
+" :helptags ~/.vim/bundle/ctrlp.vim/doc
+"set runtimepath^=~/.vim/bundle/ctrlp.vim
+"set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/node_modules/*,*.pyc,*/bower_components/*,*/*.egg-info/*
