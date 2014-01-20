@@ -4,6 +4,7 @@
 
 [alias]
     a = add
+    aa = add .
     b = branch
     ba = branch -avv
     c = commit -s
@@ -31,10 +32,12 @@
     ri = rebase -i --autosquash
     rs = rebase --skip
     rt = reset
+    rg = reflog
     s = stash
     sa = stash apply
     st = status
     up = pull
+    files = diff-tree --no-commit-id --name-only -r
 [user]
     email = adrian@panescu.com
     name = Adrian-Tudor Panescu
