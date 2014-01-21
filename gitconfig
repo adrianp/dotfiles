@@ -15,6 +15,7 @@
     cln = clean -n
     clf = clean -f
     co = checkout
+    coa = checkout .
     cp = cherry-pick
     d = difftool
     f = fetch

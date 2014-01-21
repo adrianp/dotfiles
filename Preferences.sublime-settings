@@ -1,4 +1,5 @@
 {
+	"always_prompt_for_file_reload": false,
 	"always_show_minimap_viewport": true,
 	"animation_enabled": false,
 	"bold_folder_labels": true,
