@@ -6,6 +6,7 @@
     a = add
     aa = add .
     b = branch
+    bv = branch -vv
     ba = branch -avv
     c = commit -s
     ci = commit -as
