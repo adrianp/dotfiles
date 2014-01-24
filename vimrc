@@ -132,6 +132,9 @@ set shortmess=atI
 " don't be obnoxious
 set visualbell
 
+" command history size
+set history=1000
+
 " expansions
 iab tes$ Tested-by: <@>
 iab rev$ Reviewed-by: <@>
