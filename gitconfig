@@ -19,6 +19,8 @@
     coa = checkout .
     cp = cherry-pick
     d = difftool
+    dc = difftool --cached
+    dh = difftool HEAD
     f = fetch
     gp = grep --untracked --ignore-case --line-number --break
     k = log --graph --decorate --pretty=oneline --abbrev-commit
@@ -36,7 +38,8 @@
     rt = reset
     rg = reflog
     s = stash
-    sa = stash apply
+    sp = stash pop
+    sl = stash list
     st = status
     up = pull
     files = diff-tree --no-commit-id --name-only -r
