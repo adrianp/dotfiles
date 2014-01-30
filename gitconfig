@@ -37,6 +37,8 @@
     ri = rebase -i --autosquash
     rs = rebase --skip
     rt = reset
+    rts = reset --soft
+    rth = reset --hard
     rg = reflog
     s = stash
     sp = stash pop
