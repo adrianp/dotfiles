@@ -101,6 +101,7 @@ alias c='clear'
 alias gg='git gui &' # install git-gui for this
 alias f='find . -name'
 alias src='source ~/.bashrc'
+alias srcd='cd ~/src/dotfiles'
 alias _='sudo'
 alias p='ps -lyH --forest'
 alias pud='pushd'
