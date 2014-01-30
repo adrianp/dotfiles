@@ -150,3 +150,6 @@ iab cl$ console.log(
 " :helptags ~/.vim/bundle/ctrlp.vim/doc
 "set runtimepath^=~/.vim/bundle/ctrlp.vim
 "set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/node_modules/*,*.pyc,*/bower_components/*,*/*.egg-info/*
+
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR><C-l>
