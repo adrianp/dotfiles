@@ -4,6 +4,8 @@
 
 #!/bin/bash
 
+echo "Starting..."
+
 # where are the dotfiles stored (location of this script)
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -11,10 +13,12 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # .jshintrc
 DOTFILES=( "bashrc" "gitconfig" "inputrc" "screenrc" "vimrc" )
 
+echo "Creating ~/var directory..."
 mkdir ~/var
 mkdir ~/var/dotfiles_backup
 mkdir ~/var/vim
 
+echo "Copying dotfiles..."
 for file in "${DOTFILES[@]}"
 do
 	mv ~/.$file ~/var/dotfiles_backup/$file # backup the existing dotfile
@@ -26,6 +30,7 @@ touch $DIR/bash_aliases
 mv ~/.bash_aliases ~/var/dotfiles_backup/
 ln -s $DIR/bash_aliases ~/.bash_aliases
 
+echo "Copying scripts..."
 mkdir ~/bin
 cp $DIR/scripts/git-completion.sh ~/bin/git-completion.sh
 chmod +x ~/bin/git-completion.sh
@@ -34,6 +39,7 @@ chmod +x ~/bin/git-new-workdir.sh
 cp $DIR/scripts/git-prompt.sh ~/bin/git-prompt.sh
 chmod +x ~/bin/git-prompt.sh
 
+echo "Sourcing..."
 source ~/.bashrc
 
 # ln -s jshintrc ~/.jshintrc
