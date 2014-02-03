@@ -107,6 +107,7 @@ alias srcd='cd ~/src/dotfiles'
 alias _='sudo'
 alias p='ps -lyH --forest'
 alias pud='pushd'
+alias pudd='pushd .'
 alias pod='popd'
 alias dr='dirs'
 
