@@ -22,10 +22,11 @@
     d = difftool
     dc = difftool --cached
     dh = difftool HEAD
+    dw = diff --word-diff
     f = fetch
     gp = grep --untracked --ignore-case --line-number --break
     k = log --graph --decorate --pretty=oneline --abbrev-commit
-    kl = log --decorate --pretty=oneline --abbrev-commit
+    kl = log --decorate --pretty=oneline --abbrev-commit --name-status HEAD~1..HEAD
     l = log
     p = push
     pa = push --all
@@ -43,9 +44,10 @@
     s = stash
     sp = stash pop
     sl = stash list
-    st = status
+    st = status -sb
     up = pull
     files = diff-tree --no-commit-id --name-only -r
+    refs = for-each-ref --sort=-committerdate --format='%(refname:short) %(committerdate:short)'
 [user]
     email = adrian@panescu.com
     name = Adrian-Tudor Panescu
@@ -61,6 +63,10 @@
     prompt = false
 [push]
     default = current
+[help]
+    autocorrect = 1
+[branch]
+    autosetuprebase = always
 [remote "dotfiles"]
     url=git@github.com:adrianp/dotfiles.git
     url=git@bitbucket.org:adrianp_/dotfiles.git
