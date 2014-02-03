@@ -45,6 +45,7 @@
     sp = stash pop
     sl = stash list
     st = status -sb
+    sts = status
     up = pull
     files = diff-tree --no-commit-id --name-only -r
     refs = for-each-ref --sort=-committerdate --format='%(refname:short) %(committerdate:short)'
