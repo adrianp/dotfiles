@@ -42,6 +42,7 @@
     rth = reset --hard
     rg = reflog
     s = stash
+    sh = show --oneline
     sp = stash pop
     sl = stash list
     st = status -sb
