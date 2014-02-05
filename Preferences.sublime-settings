@@ -15,6 +15,7 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"Vintage"
 	],
 	"license": "This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.",
 	"line_padding_bottom": 1,
@@ -26,11 +27,12 @@
 	"scroll_speed": 2,
 	"show_encoding": true,
 	"show_line_endings": true,
-	"show_minimap": true,
+	"show_minimap": false,
 	"tab_size": 4,
 	"translate_tabs_to_spaces": true,
 	"tree_animation_enabled": false,
 	"trim_trailing_white_space_on_save": true,
 	"vintage_start_in_command_mode": true,
-	"preview_on_click": false
+	"preview_on_click": true,
+	"auto_match_enabled": true
 }
