@@ -41,7 +41,7 @@ set ts=4 sts=0 sw=4
 "set textwidth=79
 
 " display right margin
-set colorcolumn=50,80
+set colorcolumn=80
 
 " syntax highlighting
 syntax on
