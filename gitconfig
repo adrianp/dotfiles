@@ -12,8 +12,8 @@
     c = commit -s
     ci = commit -as
     cia = commit --amend
-    cis = commit -as --squash
-    cish = commit -as --squash HEAD
+    cis = commit -a --squash
+    cish = commit -a --squash HEAD
     cln = clean -n
     clf = clean -f
     co = checkout
