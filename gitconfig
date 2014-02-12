@@ -6,6 +6,7 @@
     a = add
     aa = add .
     ap = add --patch
+    ai = add -i
     b = branch
     bv = branch -vv
     ba = branch -avv
