@@ -25,12 +25,6 @@ set nowritebackup
 set noswapfile
 set nowb
 
-" auto and smart indentation
-set autoindent
-set smartindent
-set smarttab
-set expandtab
-
 " display white space
 "set list
 
@@ -43,13 +37,17 @@ set ts=4 sts=0 sw=4
 " display right margin
 set colorcolumn=80
 
-" syntax highlighting
+" syntax highlighting and auto/smart-indenting
 syntax on
 filetype on
-filetype plugin on
+"filetype plugin on
 filetype indent on
 set synmaxcol=2048
 set background=light
+set autoindent
+set smartindent
+set smarttab
+set expandtab
 
 " make vim copy to system clipboard, need +xterm_clipboard
 "set clipboard=unnamed
