@@ -25,10 +25,15 @@
     co = checkout
     coa = checkout .
     cp = cherry-pick
-    d = difftool
-    dc = difftool --cached
-    dh = difftool HEAD
-    dw = diff --word-diff
+    dt = difftool
+    dtc = difftool --cached
+    dth = difftool HEAD
+    df = diff
+    dfc = diff --cached
+    dfh = diff HEAD
+    dfw = diff --word-diff
+    dfcw = diff --cached --word-diff
+    dfhw = diff HEAD --word-diff
     f = fetch
     gp = grep --untracked --ignore-case --line-number --break
     k = log --graph --decorate --pretty=oneline --abbrev-commit
@@ -46,6 +51,8 @@
     rt = reset
     rts = reset --soft
     rth = reset --hard
+    ustg = reset HEAD
+    ustga = reset HEAD .
     rg = reflog
     s = stash
     sh = show --oneline
