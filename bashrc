@@ -189,4 +189,7 @@ export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM="auto git"
 
+# actually see Python output in some environments like Foreman
+export PYTHONUNBUFFERED=True
+
 #export PATH=$PATH:/home/...
