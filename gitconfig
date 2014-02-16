@@ -38,6 +38,7 @@
     gp = grep --untracked --ignore-case --line-number --break
     k = log --graph --decorate --pretty=oneline --abbrev-commit
     kl = log --decorate --pretty=oneline --abbrev-commit --name-status HEAD~1..HEAD
+    last = log -1 -p --stat
     l = log
     p = push
     pa = push --all
@@ -53,8 +54,7 @@
     rt = reset
     rts = reset --soft
     rth = reset --hard
-    ustg = reset HEAD
-    ustga = reset HEAD .
+    unstage = reset HEAD
     rg = reflog
     s = stash
     sh = show --oneline
