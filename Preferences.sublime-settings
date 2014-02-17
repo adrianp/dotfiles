@@ -6,6 +6,7 @@
 	"caret_style": "wide",
 	"color_scheme": "Packages/Color Scheme - Default/Solarized (Light).tmTheme",
 	"detect_indentation": false,
+	"dictionary": "Packages/Language - English/en_GB.dic",
 	"draw_minimap_border": false,
 	"draw_white_space": "all",
 	"enable_telemetry": "disabled",
