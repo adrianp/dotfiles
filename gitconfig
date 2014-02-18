@@ -19,7 +19,7 @@
     cif = commit -v --fixup
     cifh = commit -v --amend
     ciaf = commit -va --fixup
-    ciafh = commit -va --fixup HEAD
+    ciafh = commit -va --amend
     cln = clean -n
     clf = clean -f
     co = checkout
