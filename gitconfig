@@ -7,6 +7,7 @@
     aa = add .
     ap = add --patch
     ai = add -i
+    an = add -N
     b = branch
     bv = branch -vv
     ba = branch -avv
@@ -37,6 +38,7 @@
     f = fetch
     gp = grep --untracked --ignore-case --line-number --break
     k = log --graph --decorate --pretty=oneline --abbrev-commit
+    km = log --graph --pretty=format:\"%C(yellow)%h%Creset%C(auto)%d%Creset %s %C(blue ul)%ae%Creset\"
     kl = log --decorate --pretty=oneline --abbrev-commit --name-status HEAD~1..HEAD
     last = log -1 -p --stat
     l = log
