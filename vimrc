@@ -2,22 +2,24 @@
 " License, v. 2.0. If a copy of the MPL was not distributed with this
 " file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+set nocompatible
+set encoding=utf8
+autocmd! bufwritepost .vimrc source ~/.vimrc
+
 " be pretentious as fuck
-noremap <Up> ""
-noremap! <Up> <Esc>
-noremap <Down> ""
-noremap! <Down> <Esc>
-noremap <Left> ""
-noremap! <Left> <Esc>
-noremap <Right> ""
-noremap! <Right> <Esc>
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
 
 " toggle line numbers
-set number
+"set number
+set relativenumber
 nnoremap <F10> :set nonumber!<CR>
 
 " smart buffers
 set hidden
+set switchbuf=useopen
 
 " be a man and don't use backup files
 set nobackup
@@ -25,16 +27,14 @@ set nowritebackup
 set noswapfile
 set nowb
 
-" display white space
-"set list
+" display trailing white space
+set list listchars=trail:·
 
 " 4 spaces instead of tabs
 set ts=4 sts=0 sw=4
 
-" line width
-"set textwidth=79
-
 " display right margin
+"set textwidth=80
 set colorcolumn=80
 
 " syntax highlighting and auto/smart-indenting
@@ -55,10 +55,10 @@ set expandtab
 " clear screen when exiting VIM
 "au VimLeave * :!clear
 
-" map keys for tab management
-:map <F7> :tabp<CR>
-:map <F8> :tabn<CR>
-:map <F9> :tabe<space>
+" map keys for buffer management
+:map <F7> :bp<CR>
+:map <F8> :bn<CR>
+:map <F9> :bdelete<CR>
 
 " spell-check toggle
 inoremap <silent> <F6> <c -O>:call SpellToggle()<cr>
@@ -68,6 +68,20 @@ function SpellToggle()
         set nospell
     else
         set spell spelllang=en_us
+    endif
+endfunction
+
+" colorscheme toggle
+let g:icantsee=1
+inoremap <silent> <F12> <c -O>:call ColorToggle()<cr>
+map <silent> <F12> :call ColorToggle()<cr>
+function ColorToggle()
+    if g:icantsee == 1
+        color evening
+        let g:icantsee=0
+    else
+        color default
+        let g:icantsee=1
     endif
 endfunction
 
@@ -81,8 +95,8 @@ cmap w!! %!sudo tee > /dev/null %
 :map <F3> :w<CR>
 :map <F4> :q<CR>
 
-" reload document shortcut
-:map <F5> :edit<CR>
+" reload/open document shortcut
+:map <F5> :edit 
 
 " custom status bar
 set noruler
@@ -94,9 +108,12 @@ set statusline+=%=
 set statusline+=%c,
 set statusline+=%l/%L
 
-" smarter search in terms of letter case
+" smarter search
 set ignorecase
 set smartcase
+set hlsearch
+set incsearch
+nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 " inserts a newline on Enter, an above newline on Shift+Enter
 ":map <Enter> o<ESC>
@@ -106,15 +123,11 @@ set smartcase
 :nmap <Space> i_<Esc>r
 
 " exuberant ctags binding
-set tags=tags
+"set tags=tags
 
 " persistent undo
 set undofile
 set undodir=~/var/vim
-
-" highlighted and incremental search
-set hlsearch
-set incsearch
 
 " display completion options
 set wildmenu
@@ -133,6 +146,30 @@ set visualbell
 " command history size
 set history=1000
 
+" display incomplete commands
+set showcmd
+
+" quickly open a temp file
+map <leader>q :e ~/tmp/vimbuffer<cr>
+
+" remember cursor and buffers states
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+set viminfo^=%
+set nostartofline
+
+" (un)indent
+vnoremap < <gv
+vnoremap > >gv
+
+" cd to directory of current file
+cmap cd. lcd %:p:h
+
+" don't wrap lines
+set nowrap
+
 " expansions
 iab tes$ Tested-by: <@>
 iab rev$ Reviewed-by: <@>
@@ -148,6 +185,3 @@ iab cl$ console.log(
 " :helptags ~/.vim/bundle/ctrlp.vim/doc
 "set runtimepath^=~/.vim/bundle/ctrlp.vim
 "set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/node_modules/*,*.pyc,*/bower_components/*,*/*.egg-info/*
-
-" <Ctrl-l> redraws the screen and removes any search highlighting.
-nnoremap <silent> <C-l> :nohl<CR><C-l>
