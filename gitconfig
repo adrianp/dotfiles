@@ -73,9 +73,9 @@
 [color]
     ui = auto
 [merge]
-    tool = meld
+    tool = vimdiff
 [diff]
-    tool = meld
+    tool = vimdiff
 [difftool]
     prompt = false
 [mergetool]
