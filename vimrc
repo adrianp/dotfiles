@@ -5,6 +5,9 @@
 set nocompatible
 set encoding=utf8
 autocmd! bufwritepost .vimrc source ~/.vimrc
+" pathogen: https://github.com/tpope/vim-pathogen
+execute pathogen#infect()
+let mapleader=","
 
 " be pretentious as fuck
 nnoremap <Left> :echoe "Use h"<CR>
@@ -15,7 +18,7 @@ nnoremap <Down> :echoe "Use j"<CR>
 " toggle line numbers
 "set number
 set relativenumber
-nnoremap <F10> :set nonumber!<CR>
+nnoremap <F10> :set norelativenumber!<CR>
 
 " smart buffers
 set hidden
@@ -61,8 +64,8 @@ set expandtab
 :map <F9> :bdelete<CR>
 
 " spell-check toggle
-inoremap <silent> <F6> <c -O>:call SpellToggle()<cr>
-map <silent> <F6> :call SpellToggle()<cr>
+inoremap <silent> <F6> <c -O>:call SpellToggle()<CR>
+map <silent> <F6> :call SpellToggle()<CR>
 function SpellToggle()
     if &spell == 1
         set nospell
@@ -73,8 +76,8 @@ endfunction
 
 " colorscheme toggle
 let g:icantsee=1
-inoremap <silent> <F12> <c -O>:call ColorToggle()<cr>
-map <silent> <F12> :call ColorToggle()<cr>
+inoremap <silent> <F12> <c -O>:call ColorToggle()<CR>
+map <silent> <F12> :call ColorToggle()<CR>
 function ColorToggle()
     if g:icantsee == 1
         color evening
@@ -150,7 +153,7 @@ set history=1000
 set showcmd
 
 " quickly open a temp file
-map <leader>q :e ~/tmp/vimbuffer<cr>
+map <leader>q :e ~/tmp/scrapbook<CR>
 
 " remember cursor and buffers states
 autocmd BufReadPost *
@@ -169,6 +172,39 @@ cmap cd. lcd %:p:h
 
 " don't wrap lines
 set nowrap
+
+" search for selected text, forwards (*) or backwards (#).
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+
+" NERDTree: https://github.com/scrooloose/nerdtree
+map <leader>n :NERDTreeToggle<CR>
+
+" Flake8: https://github.com/nvie/vim-flake8
+autocmd FileType python map <buffer> <leader>8 :call Flake8()<CR>
+
+" JSHint: https://github.com/Shutnik/jshint2.vim
+nnoremap <leader>j :JSHint<CR>
+inoremap <leader>j <C-O>:JSHint<CR>
+vnoremap <leader>j  :JSHint<CR>
+cnoremap <leader>j JSHint
+
+" don't set readonly mode in diff
+if &diff
+    set noro
+endif
+
+" toggle quickfix window
+map <leader>wc :ccl<CR>
+map <leader>wo :copen<CR>
 
 " expansions
 iab tes$ Tested-by: <@>
