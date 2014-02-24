@@ -16,9 +16,10 @@ nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
 " toggle line numbers
-"set number
+set number
 set relativenumber
-nnoremap <F10> :set norelativenumber!<CR>
+nnoremap <leader>l :set norelativenumber!<CR>
+nnoremap <F10> set number! norelativenumber!<CR>
 
 " smart buffers
 set hidden
@@ -62,6 +63,7 @@ set expandtab
 :map <F7> :bp<CR>
 :map <F8> :bn<CR>
 :map <F9> :bdelete<CR>
+:map <leader>b :CtrlPBuffer<CR>
 
 " spell-check toggle
 inoremap <silent> <F6> <c -O>:call SpellToggle()<CR>
@@ -187,6 +189,9 @@ vnoremap <silent> # :<C-U>
 
 " NERDTree: https://github.com/scrooloose/nerdtree
 map <leader>n :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+let NERDTreeWinPos="right"
+let NERDTreeShowLineNumbers=0
 
 " Flake8: https://github.com/nvie/vim-flake8
 autocmd FileType python map <buffer> <leader>8 :call Flake8()<CR>
@@ -203,8 +208,8 @@ if &diff
 endif
 
 " toggle quickfix window
-map <leader>wc :ccl<CR>
-map <leader>wo :copen<CR>
+"map <leader>wc :ccl<CR>
+"map <leader>wo :copen<CR>
 
 " expansions
 iab tes$ Tested-by: <@>
