@@ -3,11 +3,24 @@
 " file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 set nocompatible
+filetype off
 set encoding=utf8
 autocmd! bufwritepost .vimrc source ~/.vimrc
-" pathogen: https://github.com/tpope/vim-pathogen
-execute pathogen#infect()
+filetype plugin indent on
 let mapleader=","
+
+" Vundle: https://github.com/gmarik/vundle.git
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Run $ vim +BundleInstall +qall or :BundleInstall
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'Shutnik/jshint2.vim'
+Bundle 'nvie/vim-flake8'
+"Bundle 'Valloric/YouCompleteMe'
+Bundle 'tpope/vim-surround'
+"Bundle 'marijnh/tern_for_vim'
 
 " be pretentious as fuck
 nnoremap <Left> :echoe "Use h"<CR>
@@ -44,8 +57,6 @@ set colorcolumn=80
 " syntax highlighting and auto/smart-indenting
 syntax on
 filetype on
-"filetype plugin on
-filetype indent on
 set synmaxcol=2048
 set background=light
 set autoindent
@@ -63,7 +74,6 @@ set expandtab
 :map <F7> :bp<CR>
 :map <F8> :bn<CR>
 :map <F9> :bdelete<CR>
-:map <leader>b :CtrlPBuffer<CR>
 
 " spell-check toggle
 inoremap <silent> <F6> <c -O>:call SpellToggle()<CR>
@@ -202,6 +212,10 @@ inoremap <leader>j <C-O>:JSHint<CR>
 vnoremap <leader>j  :JSHint<CR>
 cnoremap <leader>j JSHint
 
+" CTRLP: http://kien.github.io/ctrlp.vim/#installation
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/node_modules/*,*.pyc,*/bower_components/*,*/*.egg-info/*
+map <leader>b :CtrlPBuffer<CR>
+
 " don't set readonly mode in diff
 if &diff
     set noro
@@ -221,8 +235,3 @@ iab sob$ Signed-off-by: Adrian-Tudor Panescu <adrian@panescu.com>
 iab hw$ "Hello World!"
 iab ipdb$ import ipdb<CR>ipdb.set_trace()
 iab cl$ console.log(
-
-" ctrlp.vim: http://kien.github.io/ctrlp.vim/#installation
-" :helptags ~/.vim/bundle/ctrlp.vim/doc
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
-"set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/node_modules/*,*.pyc,*/bower_components/*,*/*.egg-info/*
