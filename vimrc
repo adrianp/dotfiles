@@ -22,6 +22,12 @@ Bundle 'nvie/vim-flake8'
 Bundle 'tpope/vim-surround'
 "Bundle 'marijnh/tern_for_vim'
 
+" set xterm title
+set title
+
+" access the yank registers
+map <leader>r :reg<CR>
+
 " be pretentious as fuck
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
@@ -71,9 +77,9 @@ set expandtab
 "au VimLeave * :!clear
 
 " map keys for buffer management
-:map <F7> :bp<CR>
-:map <F8> :bn<CR>
-:map <F9> :bdelete<CR>
+map <leader>< :bp<CR>
+map <leader>> :bn<CR>
+map <leader>/ :bdelete<CR>
 
 " spell-check toggle
 inoremap <silent> <F6> <c -O>:call SpellToggle()<CR>
