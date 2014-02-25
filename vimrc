@@ -6,6 +6,7 @@ set nocompatible
 filetype off
 set encoding=utf8
 autocmd! bufwritepost .vimrc source ~/.vimrc
+autocmd! bufwritepost vimrc source ~/.vimrc
 filetype plugin indent on
 let mapleader=","
 
@@ -83,7 +84,7 @@ map <leader>/ :bdelete<CR>
 " spell-check toggle
 inoremap <silent> <F6> <c -O>:call SpellToggle()<CR>
 map <silent> <F6> :call SpellToggle()<CR>
-function SpellToggle()
+function! SpellToggle()
     if &spell == 1
         set nospell
     else
@@ -95,7 +96,7 @@ endfunction
 let g:icantsee=1
 inoremap <silent> <F12> <c -O>:call ColorToggle()<CR>
 map <silent> <F12> :call ColorToggle()<CR>
-function ColorToggle()
+function! ColorToggle()
     if g:icantsee == 1
         color evening
         let g:icantsee=0
