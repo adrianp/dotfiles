@@ -16,11 +16,10 @@ call vundle#rc()
 " Run $ vim +BundleInstall +qall or :BundleInstall
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
-Bundle 'Shutnik/jshint2.vim'
-Bundle 'nvie/vim-flake8'
 "Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-surround'
 "Bundle 'marijnh/tern_for_vim'
+Bundle 'scrooloose/syntastic'
 
 " set xterm title
 set title
@@ -209,14 +208,8 @@ let NERDTreeShowHidden=1
 let NERDTreeWinPos="right"
 let NERDTreeShowLineNumbers=0
 
-" Flake8: https://github.com/nvie/vim-flake8
-autocmd FileType python map <buffer> <leader>8 :call Flake8()<CR>
-
-" JSHint: https://github.com/Shutnik/jshint2.vim
-nnoremap <leader>j :JSHint<CR>
-inoremap <leader>j <C-O>:JSHint<CR>
-vnoremap <leader>j  :JSHint<CR>
-cnoremap <leader>j JSHint
+" Syntastic: https://github.com/scrooloose/syntastic
+map <leader>e :Errors<CR>
 
 " CTRLP: http://kien.github.io/ctrlp.vim/#installation
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/node_modules/*,*.pyc,*/bower_components/*,*/*.egg-info/*
