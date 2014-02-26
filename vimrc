@@ -7,7 +7,6 @@ filetype off
 set encoding=utf8
 autocmd! bufwritepost .vimrc source ~/.vimrc
 autocmd! bufwritepost vimrc source ~/.vimrc
-filetype plugin indent on
 let mapleader=","
 
 " Vundle: https://github.com/gmarik/vundle.git
@@ -21,6 +20,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-surround'
 "Bundle 'marijnh/tern_for_vim'
 Bundle 'scrooloose/syntastic'
+
+"filetype plugin on
+filetype indent on
 
 " set xterm title
 set title
