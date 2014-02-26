@@ -20,6 +20,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-surround'
 "Bundle 'marijnh/tern_for_vim'
 Bundle 'scrooloose/syntastic'
+"Bundle 'LaTeX-Box-Team/LaTeX-Box'
 
 "filetype plugin on
 filetype indent on
@@ -230,6 +231,12 @@ endif
 " copy/ paste to X system clipboard
 "map <leader>cc :w !xsel -i -b<CR><CR>
 "map <leader>pb :r!xsel -b<CR>
+
+" LaTeX-Box: https://github.com/LaTeX-Box-Team/LaTeX-Box
+map <leader>mk :Latexmk<CR>
+map <leader>mkc :LatexmkClean<CR>
+map <leader>mke :LatexErrors<CR>
+map <leader>mkv :LatexView<CR>
 
 " expansions
 iab tes$ Tested-by: <@>
