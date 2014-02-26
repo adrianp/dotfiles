@@ -225,6 +225,10 @@ endif
 "map <leader>wc :ccl<CR>
 "map <leader>wo :copen<CR>
 
+" copy/ paste to X system clipboard
+"map <leader>cc :w !xsel -i -b<CR><CR>
+"map <leader>pb :r!xsel -b<CR>
+
 " expansions
 iab tes$ Tested-by: <@>
 iab rev$ Reviewed-by: <@>
