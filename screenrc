@@ -18,3 +18,6 @@ autodetach off
 
 # turn off visual bell
 vbell off
+
+# C-a b will copy from screen's copy buffer to the X clipboard via xsel
+#bind b eval writebuf 'exec /bin/sh -c "xsel -i -b < /tmp/screen-exchange"' 'exec /bin/sh -c "killall xsel"'
