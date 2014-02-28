@@ -8,6 +8,7 @@
     ap = add --patch
     ai = add -i
     an = add -N
+    ana = add -N .
     b = branch
     bv = branch -vv
     ba = branch -avv
