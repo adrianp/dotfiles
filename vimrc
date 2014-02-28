@@ -31,6 +31,9 @@ set title
 " access the yank registers
 map <leader>r :reg<CR>
 
+" disable whietspace diff
+set diffopt=iwhite
+
 " be pretentious as fuck
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
@@ -41,7 +44,7 @@ nnoremap <Down> :echoe "Use j"<CR>
 set number
 set relativenumber
 nnoremap <leader>l :set norelativenumber!<CR>
-nnoremap <F10> set number! norelativenumber!<CR>
+nnoremap <F10> :set number! norelativenumber!<CR>
 
 " smart buffers
 set hidden
