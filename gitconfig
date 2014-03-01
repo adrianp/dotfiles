@@ -89,6 +89,8 @@
     autosetuprebase = always
 [clean]
     requireForce = true
+[web]
+    browser = google-chrome
 [remote "dotfiles"]
     url=git@github.com:adrianp/dotfiles.git
     url=git@bitbucket.org:adrianp_/dotfiles.git
