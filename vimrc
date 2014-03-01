@@ -16,11 +16,13 @@ call vundle#rc()
 " Run $ vim +BundleInstall +qall or :BundleInstall
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
-"Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-surround'
+Bundle 'Lokaltog/vim-easymotion'
+
+"Bundle 'Valloric/YouCompleteMe'
 "Bundle 'marijnh/tern_for_vim'
-Bundle 'scrooloose/syntastic'
 "Bundle 'LaTeX-Box-Team/LaTeX-Box'
+"Bundle 'scrooloose/syntastic'
 
 "filetype plugin on
 filetype indent on
@@ -57,10 +59,11 @@ set noswapfile
 set nowb
 
 " display trailing white space
-set list listchars=trail:·
+set list listchars=tab:▸\ ,trail:·
 
 " 4 spaces instead of tabs
 set ts=4 sts=0 sw=4
+autocmd Filetype tex,plaintex,html setlocal ts=2 sts=2 sw=2
 
 " display right margin
 "set textwidth=80
@@ -240,6 +243,9 @@ map <leader>mk :Latexmk<CR>
 map <leader>mkc :LatexmkClean<CR>
 map <leader>mke :LatexErrors<CR>
 map <leader>mkv :LatexView<CR>
+
+" remove trailling whitespace
+nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
 " expansions
 iab tes$ Tested-by: <@>
