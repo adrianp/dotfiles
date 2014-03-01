@@ -4,10 +4,12 @@
 
 set nocompatible
 filetype off
-set encoding=utf8
+set encoding=utf-8
 autocmd! bufwritepost .vimrc source ~/.vimrc
 autocmd! bufwritepost vimrc source ~/.vimrc
 let mapleader=","
+nmap <silent> <leader>rc :e $MYVIMRC<CR>
+nnoremap ; :
 
 " Vundle: https://github.com/gmarik/vundle.git
 set rtp+=~/.vim/bundle/vundle/
@@ -18,6 +20,10 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-surround'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'vim-scripts/YankRing.vim'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'tpope/vim-fugitive'
 
 "Bundle 'Valloric/YouCompleteMe'
 "Bundle 'marijnh/tern_for_vim'
@@ -66,7 +72,6 @@ set ts=4 sts=0 sw=4
 autocmd Filetype tex,plaintex,html setlocal ts=2 sts=2 sw=2
 
 " display right margin
-"set textwidth=80
 set colorcolumn=80
 
 " syntax highlighting and auto/smart-indenting
@@ -78,9 +83,8 @@ set autoindent
 set smartindent
 set smarttab
 set expandtab
+set copyindent
 
-" make vim copy to system clipboard, need +xterm_clipboard
-"set clipboard=unnamed
 
 " clear screen when exiting VIM
 "au VimLeave * :!clear
@@ -131,7 +135,8 @@ cmap w!! %!sudo tee > /dev/null %
 " custom status bar
 set noruler
 set laststatus=2
-set statusline=%t
+set statusline=(%{fugitive#statusline()})
+set statusline+=%t
 " make it really obvious that the file was modifed
 set statusline+=%m%m%m%m%m%m%m%m%m%m%m%m%m%m
 set statusline+=%=
@@ -143,11 +148,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
-nnoremap <silent> <C-l> :nohl<CR><C-l>
-
-" inserts a newline on Enter, an above newline on Shift+Enter
-":map <Enter> o<ESC>
-":map <Shift-Enter> O<ESC>
+nnoremap <leader><space> :noh<cr>
 
 " allows to insert one single character when pressing Space
 :nmap <Space> i_<Esc>r
@@ -158,6 +159,7 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 " persistent undo
 set undofile
 set undodir=~/var/vim
+set undolevels=1000
 
 " display completion options
 set wildmenu
@@ -224,19 +226,16 @@ map <leader>e :Errors<CR>
 " CTRLP: http://kien.github.io/ctrlp.vim/#installation
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/node_modules/*,*.pyc,*/bower_components/*,*/*.egg-info/*
 map <leader>b :CtrlPBuffer<CR>
+map <leader>p :CtrlP<CR>
 
 " don't set readonly mode in diff
 if &diff
     set noro
 endif
 
-" toggle quickfix window
-"map <leader>wc :ccl<CR>
-"map <leader>wo :copen<CR>
-
 " copy/ paste to X system clipboard
-"map <leader>cc :w !xsel -i -b<CR><CR>
-"map <leader>pb :r!xsel -b<CR>
+map <leader>xx :w !xsel -i -b<CR><CR>
+map <leader>vv :r!xsel -b<CR>
 
 " LaTeX-Box: https://github.com/LaTeX-Box-Team/LaTeX-Box
 map <leader>mk :Latexmk<CR>
@@ -245,7 +244,34 @@ map <leader>mke :LatexErrors<CR>
 map <leader>mkv :LatexView<CR>
 
 " remove trailling whitespace
-nnoremap <Leader>rtw :%s/\s\+$//e<CR>
+nnoremap <Leader>rtw :%s/\s\+$//<cr>:let @/=''<CR>
+
+" use Q for formatting the current selection or paragraph
+vmap Q gq
+nmap Q gqap
+
+" sane wrapped line navigation
+nnoremap j gj
+nnoremap k gk
+
+" easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" use tab to see matching bracket
+nnoremap <tab> %
+vnoremap <tab> %
+
+" split vertically and switch to split
+nnoremap <leader>w <C-w>v<C-w>l
+
+" YankRing: https://github.com/vim-scripts/YankRing.vim
+map <leader>yr :YRShow<CR>
+
+" RainbowParentheses: https://github.com/kien/rainbow_parentheses.vim
+map <leader>rp :RainbowParenthesesToggleAll<CR>
 
 " expansions
 iab tes$ Tested-by: <@>
