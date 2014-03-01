@@ -110,6 +110,7 @@ alias pud='pushd'
 alias pudd='pushd .'
 alias pod='popd'
 alias dr='dirs'
+alias vrc='vim ~/.vimrc'
 
 alias g='git'
 complete -o default -o nospace -F _git g
