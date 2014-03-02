@@ -111,6 +111,8 @@ alias pudd='pushd .'
 alias pod='popd'
 alias dr='dirs'
 alias vrc='vim ~/.vimrc'
+alias mp='mkdir -p'
+alias tree='tree -aFC --dirsfirst -L 7 -I .git'
 
 alias g='git'
 complete -o default -o nospace -F _git g
@@ -122,8 +124,15 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
+# kills a process tree specified by the root
 function exterminate() {
     kill -9 -$(ps | grep $1 | grep -v grep | awk '{print $1}')
+}
+
+# creates a directory tree (linear) with a file leaf
+function mktree() {
+    mkdir -p $1
+    touch $1/$2
 }
 
 # creates a directory and navigates to it
