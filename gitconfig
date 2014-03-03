@@ -4,7 +4,7 @@
 
 [alias]
     a = add
-    aa = add .
+    aa = add --all
     ap = add --patch
     ai = add -i
     an = add -N
@@ -12,16 +12,16 @@
     b = branch
     bv = branch -vv
     ba = branch -avv
-    ci = commit -vs
-    cis = commit -v --squash
-    cish = commit -v --squash HEAD
-    cia = commit -vsa
-    cias = commit -va --squash
-    ciash = commit -va --squash HEAD
-    cif = commit -v --fixup
-    cifh = commit -v --amend
-    ciaf = commit -va --fixup
-    ciafh = commit -va --amend
+    c = commit -vs
+    cs = commit -v --squash
+    csh = commit -v --squash HEAD
+    ca = commit -vsa
+    cas = commit -va --squash
+    cash = commit -va --squash HEAD
+    cf = commit -v --fixup
+    cfh = commit -v --amend
+    caf = commit -va --fixup
+    cafh = commit -va --amend
     cln = clean -n
     clf = clean -f
     co = checkout
