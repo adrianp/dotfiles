@@ -8,7 +8,7 @@ set encoding=utf-8
 autocmd! bufwritepost .vimrc source ~/.vimrc
 autocmd! bufwritepost vimrc source ~/.vimrc
 let mapleader=","
-nmap <silent> <leader>rc :e $MYVIMRC<CR>
+nmap <silent> <leader>rc :e ~/src/dotfiles/vimrc<CR>
 nnoremap ; :
 
 " Vundle: https://github.com/gmarik/vundle.git
@@ -69,7 +69,7 @@ set list listchars=tab:▸\ ,trail:·
 
 " 4 spaces instead of tabs
 set ts=4 sts=0 sw=4
-autocmd Filetype tex,plaintex,html setlocal ts=2 sts=2 sw=2
+autocmd Filetype text,tex,plaintex,html setlocal ts=2 sts=2 sw=2
 
 " display right margin
 set colorcolumn=80
@@ -126,7 +126,7 @@ set pastetoggle=<F2>
 cmap w!! %!sudo tee > /dev/null %
 
 " close shortcuts
-:map <F3> :w<CR>
+:map <leader>; :w<CR>
 :map <F4> :q<CR>
 
 " reload/open document shortcut
@@ -182,7 +182,7 @@ set history=1000
 set showcmd
 
 " quickly open a temp file
-map <leader>q :e ~/tmp/scrapbook<CR>
+map <leader>q :e ~/tmp/scrapbook.txt<CR>
 
 " remember cursor and buffers states
 autocmd BufReadPost *
@@ -219,6 +219,8 @@ map <leader>n :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeWinPos="right"
 let NERDTreeShowLineNumbers=0
+" disable buffer delete in NERDTree
+autocmd FileType nerdtree cnoreabbrev <buffer> bd <nop>
 
 " Syntastic: https://github.com/scrooloose/syntastic
 map <leader>e :Errors<CR>
