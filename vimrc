@@ -92,7 +92,7 @@ set copyindent
 " map keys for buffer management
 map <leader>< :bp<CR>
 map <leader>> :bn<CR>
-map <leader>/ :bdelete<CR>
+map <leader>/ :bd<CR>
 
 " spell-check toggle
 inoremap <silent> <F6> <c -O>:call SpellToggle()<CR>
@@ -244,6 +244,7 @@ map <leader>mk :Latexmk<CR>
 map <leader>mkc :LatexmkClean<CR>
 map <leader>mke :LatexErrors<CR>
 map <leader>mkv :LatexView<CR>
+let g:tex_flavor = "latex"
 
 " remove trailling whitespace
 nnoremap <Leader>rtw :%s/\s\+$//<cr>:let @/=''<CR>
