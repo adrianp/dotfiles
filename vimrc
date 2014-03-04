@@ -69,7 +69,7 @@ set list listchars=tab:▸\ ,trail:·
 
 " 4 spaces instead of tabs
 set ts=4 sts=0 sw=4
-autocmd Filetype text,tex,plaintex,html setlocal ts=2 sts=2 sw=2
+autocmd Filetype bib,text,tex,plaintex,html setlocal ts=2 sts=2 sw=2
 
 " display right margin
 set colorcolumn=80
@@ -101,9 +101,12 @@ function! SpellToggle()
     if &spell == 1
         set nospell
     else
-        set spell spelllang=en_us
+        set spell spelllang=en_gb
     endif
 endfunction
+
+" somewhat better spell-checker
+map <F3> :!aspell -l en_gb -c %<CR>
 
 " colorscheme toggle
 let g:icantsee=1
@@ -135,13 +138,14 @@ cmap w!! %!sudo tee > /dev/null %
 " custom status bar
 set noruler
 set laststatus=2
-set statusline=(%{fugitive#statusline()})
-set statusline+=%t
-" make it really obvious that the file was modifed
-set statusline+=%m%m%m%m%m%m%m%m%m%m%m%m%m%m
+set statusline=%n\|%F
+"" make it really obvious that the file was modifed
+set statusline+=\ %m%m%m%m%m%m%m%m%m%m%m%m%m%m
 set statusline+=%=
-set statusline+=%c,
-set statusline+=%l/%L
+set statusline+=[%{mode()}%{mode()}%{mode()}]
+set statusline+=%{fugitive#statusline()}
+set statusline+=%y
+set statusline+=[%c,%p/%L]
 
 " smarter search
 set ignorecase
