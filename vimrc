@@ -145,7 +145,7 @@ set statusline+=%=
 set statusline+=[%{mode()}%{mode()}%{mode()}]
 set statusline+=%{fugitive#statusline()}
 set statusline+=%y
-set statusline+=[%c,%p/%L]
+set statusline+=[%c,%p\|%L]
 
 " smarter search
 set ignorecase
