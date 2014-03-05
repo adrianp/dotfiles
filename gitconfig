@@ -43,6 +43,7 @@
     kl = log --decorate --pretty=oneline --abbrev-commit --name-status HEAD~1..HEAD
     last = log -1 -p --stat
     l = log
+    mff = merge --ff-only --stat -v --progress
     p = push
     pa = push --all
     paf = push --all --force
@@ -65,7 +66,7 @@
     sl = stash list
     st = status -sb
     sts = status
-    up = pull
+    up = pull --ff-only --stat -v --progress
     files = diff-tree --no-commit-id --name-only -r
     refs = for-each-ref --sort=-committerdate --format='%(refname:short) %(committerdate:short)'
 [user]
