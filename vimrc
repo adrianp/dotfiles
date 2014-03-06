@@ -69,7 +69,7 @@ set list listchars=tab:▸\ ,trail:·
 
 " 4 spaces instead of tabs
 set ts=4 sts=0 sw=4
-autocmd Filetype bib,text,tex,plaintex,html setlocal ts=2 sts=2 sw=2
+autocmd Filetype xml,bib,text,tex,plaintex,html setlocal ts=2 sts=2 sw=2
 
 " display right margin
 set colorcolumn=80
