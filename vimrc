@@ -280,6 +280,25 @@ map <leader>yr :YRShow<CR>
 " RainbowParentheses: https://github.com/kien/rainbow_parentheses.vim
 map <leader>rp :RainbowParenthesesToggleAll<CR>
 
+" Git commit messages helpers
+au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+autocmd Filetype gitcommit setlocal textwidth=72
+
+" time out on key codes but not on mappings
+set notimeout
+set ttimeout
+set ttimeoutlen=10
+
+" even faster ESC-aping (https://powerline.readthedocs.org/en/latest/tipstricks.html#vim)
+augroup FastEscape
+  autocmd!
+  au InsertEnter * set timeoutlen=0
+  au InsertLeave * set timeoutlen=1000
+augroup END
+
+" ask before leaving with unsaved changes
+set confirm
+
 " expansions
 iab tes$ Tested-by: <@>
 iab rev$ Reviewed-by: <@>
