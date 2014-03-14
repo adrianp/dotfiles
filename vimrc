@@ -273,6 +273,7 @@ vnoremap <tab> %
 
 " split vertically and switch to split
 nnoremap <leader>w <C-w>v<C-w>l
+map <leader>3 :n#<CR>
 
 " YankRing: https://github.com/vim-scripts/YankRing.vim
 map <leader>yr :YRShow<CR>
