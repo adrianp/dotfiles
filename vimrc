@@ -244,7 +244,7 @@ map <leader>xx :w !xsel -i -b<CR><CR>
 map <leader>vv :r!xsel -b<CR>
 
 " LaTeX-Box: https://github.com/LaTeX-Box-Team/LaTeX-Box
-map <leader>mk :Latexmk<CR>
+map <leader>mkk :Latexmk<CR>
 map <leader>mkc :LatexmkClean<CR>
 map <leader>mke :LatexErrors<CR>
 map <leader>mkv :LatexView<CR>
@@ -285,17 +285,15 @@ map <leader>rp :RainbowParenthesesToggleAll<CR>
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 autocmd Filetype gitcommit setlocal textwidth=72
 
-" time out on key codes but not on mappings
-set notimeout
-set ttimeout
-set ttimeoutlen=10
-
 " even faster ESC-aping (https://powerline.readthedocs.org/en/latest/tipstricks.html#vim)
-augroup FastEscape
-  autocmd!
-  au InsertEnter * set timeoutlen=0
-  au InsertLeave * set timeoutlen=1000
-augroup END
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
 
 " ask before leaving with unsaved changes
 set confirm
@@ -310,3 +308,5 @@ iab sob$ Signed-off-by: Adrian-Tudor Panescu <adrian@panescu.com>
 iab hw$ "Hello World!"
 iab ipdb$ import ipdb<CR>ipdb.set_trace()
 iab cl$ console.log(
+
+" installation specific mappings
