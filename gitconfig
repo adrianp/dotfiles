@@ -65,6 +65,7 @@
     sl = stash list
     st = status -sb
     sts = status
+    t = tag
     up = pull --ff-only --stat -v --progress
     files = diff-tree --no-commit-id --name-only -r
     refs = for-each-ref --sort=-committerdate --format='%(refname:short) %(committerdate:short)'
