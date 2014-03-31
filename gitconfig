@@ -9,8 +9,7 @@
     ai = add -i
     an = add -N
     ana = add -N .
-    b = branch
-    bv = branch -vv
+    b = branch -vv
     ba = branch -avv
     c = commit -vs
     cs = commit -v --squash
