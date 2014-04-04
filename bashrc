@@ -181,7 +181,10 @@ function set_ps1 {
 
     export PS1="${red}${load}${nocol}|$(date +"%H:%M.")${cyan}$(date +"%d")${nocol}|\u@${red}\h${nocol}:${green}\w${nocol}${purple}${git}${nocol}${red}${venv}${nocol}\n$ ";
 }
-export PROMPT_COMMAND=set_ps1; history -a
+export PROMPT_COMMAND=set_ps1
+
+# after each command, save and reload history: http://unix.stackexchange.com/questions/1288
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 # include user's bin/ directory
 if [ -d "$HOME/bin" ]; then
