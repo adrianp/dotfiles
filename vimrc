@@ -229,6 +229,9 @@ autocmd FileType nerdtree cnoreabbrev <buffer> bd <nop>
 " Syntastic: https://github.com/scrooloose/syntastic
 map <leader>e :Errors<CR>
 
+" detect JSON files correctly
+au BufRead,BufNewFile *.json set filetype=json
+
 " CTRLP: http://kien.github.io/ctrlp.vim/#installation
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/node_modules/*,*.pyc,*/bower_components/*,*/*.egg-info/*
 map <leader>b :CtrlPBuffer<CR>
