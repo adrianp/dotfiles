@@ -284,6 +284,9 @@ map <leader>yr :YRShow<CR>
 " RainbowParentheses: https://github.com/kien/rainbow_parentheses.vim
 map <leader>rp :RainbowParenthesesToggleAll<CR>
 
+" YouCompleteMe: https://github.com/Valloric/YouCompleteMe
+let g:ycm_confirm_extra_conf=0
+
 " Git commit messages helpers
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 autocmd Filetype gitcommit setlocal textwidth=72
