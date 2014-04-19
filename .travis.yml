@@ -1,10 +1,4 @@
 language: bash
-before_install:
-  - 'printf "SHELL: $SHELL\nARGV[0]: $0\n"'
 install:
   - "./deploy.sh"
-#before_script:
 script: true
-#after_success:
-#after_failure:
-#after_script:
