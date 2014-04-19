@@ -228,6 +228,7 @@ autocmd FileType nerdtree cnoreabbrev <buffer> bd <nop>
 
 " Syntastic: https://github.com/scrooloose/syntastic
 map <leader>e :Errors<CR>
+let g:syntastic_jshint_exec="/usr/bin/jshint"
 
 " detect JSON files correctly
 au BufRead,BufNewFile *.json set filetype=json
