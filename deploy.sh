@@ -3,46 +3,46 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 #!/bin/bash
-
-echo "Starting..."
+set -o nounset
+set -o errexit
 
 # where are the dotfiles stored (location of this script)
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# the name of the files to deploy; notice that we skip .bash_aliases and
-# .jshintrc
-DOTFILES=( "bashrc" "gitconfig" "inputrc" "screenrc" "vimrc" )
+DOTFILES=( "bashrc" "gitconfig" "inputrc" "screenrc" "vimrc" "jshintrc" )
 
-echo "Creating ~/var directory..."
 mkdir ~/var
 mkdir ~/var/dotfiles_backup
 mkdir ~/var/vim
 
-echo "Copying dotfiles..."
 for file in "${DOTFILES[@]}"
 do
-	mv ~/.$file ~/var/dotfiles_backup/$file # backup the existing dotfile
-	ln -s $DIR/$file ~/.$file # link the new dotfile
+    mv ~/.$file ~/var/dotfiles_backup/$file  # backup the existing dotfile
+    ln -s $DIR/$file ~/.$file
 done
 
 # create an empty .bash_aliases file
-touch $DIR/bash_aliases
+touch $DIR/bash_aliases  # note that if this files exists for some reason, it won't be overwritten
 mv ~/.bash_aliases ~/var/dotfiles_backup/
 ln -s $DIR/bash_aliases ~/.bash_aliases
 
-echo "Copying scripts..."
+echo "Do not forget to source .bashrc!"
+
 mkdir ~/bin
-cp $DIR/scripts/git-completion.sh ~/bin/git-completion.sh
-chmod +x ~/bin/git-completion.sh
-cp $DIR/scripts/git-new-workdir.sh ~/bin/git-new-workdir.sh
-chmod +x ~/bin/git-new-workdir.sh
-cp $DIR/scripts/git-prompt.sh ~/bin/git-prompt.sh
-chmod +x ~/bin/git-prompt.sh
+SCRIPTS=( "git-completion.sh" "git-new-workdir.sh" "git-prompt.sh" "nocaps.sh")
 
-echo "Sourcing..."
-source ~/.bashrc
+for file in "${SCRIPTS[@]}"
+do
+    cp $DIR/scripts/$file ~/bin/$file  # FIXME: do we really need to cp, ln does not work?
+    chmod +x ~/bin/$file
+done
 
-# ln -s jshintrc ~/.jshintrc
-# rm ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
-# ln -s Preferences.sublime-settings ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
-# cp terminalrc ~/.config/xfce4/terminal/terminalrc
+echo "Do not forget to add ~/bin/nocaps.sh to startup!"
+
+# links don't work for this file
+cp terminalrc ~/.config/xfce4/terminal/terminalrc
+
+mkdir ~/.ssh  # will complain if exists
+ln -s $DIR/ssh.config ~/.ssh/config
+
+echo "Done!"
