@@ -11,24 +11,24 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 DOTFILES=( "bashrc" "gitconfig" "inputrc" "screenrc" "vimrc" "jshintrc" )
 
-mkdir ~/var
+mkdir ~/var || true
 mkdir ~/var/dotfiles_backup
 mkdir ~/var/vim
 
 for file in "${DOTFILES[@]}"
 do
-    mv ~/.$file ~/var/dotfiles_backup/$file  # backup the existing dotfile
+    mv ~/.$file ~/var/dotfiles_backup/$file || true  # backup the existing dotfile
     ln -s $DIR/$file ~/.$file
 done
 
 # create an empty .bash_aliases file
 touch $DIR/bash_aliases  # note that if this files exists for some reason, it won't be overwritten
-mv ~/.bash_aliases ~/var/dotfiles_backup/
+mv ~/.bash_aliases ~/var/dotfiles_backup/ || true
 ln -s $DIR/bash_aliases ~/.bash_aliases
 
 echo "Do not forget to source .bashrc!"
 
-mkdir ~/bin
+mkdir ~/bin || true
 SCRIPTS=( "git-completion.sh" "git-new-workdir.sh" "git-prompt.sh" "nocaps.sh")
 
 for file in "${SCRIPTS[@]}"
@@ -40,9 +40,10 @@ done
 echo "Do not forget to add ~/bin/nocaps.sh to startup!"
 
 # links don't work for this file
-cp terminalrc ~/.config/xfce4/terminal/terminalrc
+mkdir ~/.config || true && mkdir ~/.config/xfce4 || true && mkdir ~/.config/xfce4/terminal || true
+cp $DIR/terminalrc ~/.config/xfce4/terminal/terminalrc
 
-mkdir ~/.ssh  # will complain if exists
+mkdir ~/.ssh || true
 ln -s $DIR/ssh.config ~/.ssh/config
 
 echo "Done!"
