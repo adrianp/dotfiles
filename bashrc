@@ -113,6 +113,10 @@ alias dr='dirs'
 alias vrc='vim ~/.vimrc'
 alias mp='mkdir -p'
 alias tree='tree -aFC --dirsfirst -L 7 -I .git'
+alias r='ranger .'
+alias js='node'
+alias gg='git gui &'
+alias cdv='cdvirtualenv'
 
 alias g='git'
 complete -o default -o nospace -F _git g
