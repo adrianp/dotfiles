@@ -128,9 +128,7 @@ set pastetoggle=<F2>
 " :w!! will save the file as root (when forgetting to sudo vim)
 cmap w!! %!sudo tee > /dev/null %
 
-" close shortcuts
 :map <leader>; :w<CR>
-:map <F4> :q<CR>
 
 " reload/open document shortcut
 :map <F5> :edit 
