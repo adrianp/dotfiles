@@ -43,6 +43,7 @@
     last = log -1 -p --stat
     l = log
     mff = merge --ff-only --stat -v --progress
+    mnf = merge --no-ff --stat -v --progress
     p = push
     pa = push --all
     paf = push --all --force
