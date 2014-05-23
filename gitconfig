@@ -11,6 +11,10 @@
     ana = add -N .
     b = branch -vv
     ba = branch -avv
+    bis = bisect start
+    big = bisect good
+    bib = bisect bad
+    bir = bisect reset
     c = commit -vs
     cs = commit -v --squash
     csh = commit -v --squash HEAD
@@ -26,6 +30,8 @@
     co = checkout
     coa = checkout .
     cp = cherry-pick
+    cpa = cherry-pick --abort
+    cpc = cherry-pick --continue
     dt = difftool
     dtc = difftool --cached
     dth = difftool HEAD
@@ -44,6 +50,7 @@
     l = log
     mff = merge --ff-only --stat -v --progress
     mnf = merge --no-ff --stat -v --progress
+    mt = mergetool
     p = push
     pa = push --all
     paf = push --all --force
@@ -76,7 +83,7 @@
 [color]
     ui = auto
 [merge]
-    tool = vimdiff
+    tool = meld
 [diff]
     tool = vimdiff
 [difftool]
