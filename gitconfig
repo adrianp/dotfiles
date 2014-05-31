@@ -27,6 +27,7 @@
     cafh = commit -va --amend
     cln = clean -n
     clf = clean -f
+    clo = clone
     co = checkout
     coa = checkout .
     cp = cherry-pick
@@ -56,11 +57,11 @@
     paf = push --all --force
     pt = push --tags
     ptf = push --tags --force
-    r = rebase
+    r = rebase --preserve-merges
     ra = rebase --abort
     rc = rebase --continue
     rem = remote -v
-    ri = rebase -i --autosquash
+    ri = rebase -i --autosquash --preserve-merges
     rs = rebase --skip
     rt = reset
     rts = reset --soft
