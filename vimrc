@@ -315,5 +315,6 @@ iab sob$ Signed-off-by: Adrian-Tudor Panescu <adrian@panescu.com>
 iab hw$ "Hello World!"
 iab ipdb$ import ipdb<CR>ipdb.set_trace()
 iab cl$ console.log(
+iab st$ console.log(new Error().stack);
 
 " installation specific mappings
