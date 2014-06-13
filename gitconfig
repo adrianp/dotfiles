@@ -66,6 +66,7 @@
     rt = reset
     rts = reset --soft
     rth = reset --hard
+    rp = remote prune
     unstage = reset HEAD
     rg = reflog
     s = stash
