@@ -21,6 +21,7 @@
     ca = commit -vsa
     cas = commit -va --squash
     cash = commit -va --squash HEAD
+    ce = clone -v --progress
     cf = commit -v --fixup
     cfh = commit -v --amend
     caf = commit -va --fixup
