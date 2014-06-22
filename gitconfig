@@ -28,7 +28,6 @@
     cafh = commit -va --amend
     cln = clean -n
     clf = clean -f
-    clo = clone
     co = checkout
     coa = checkout .
     cp = cherry-pick
