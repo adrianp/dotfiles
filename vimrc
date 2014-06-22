@@ -24,6 +24,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'Raimondi/delimitMate'
 
 "Bundle 'Valloric/YouCompleteMe'
 "Bundle 'marijnh/tern_for_vim'
@@ -285,6 +286,17 @@ map <leader>rp :RainbowParenthesesToggleAll<CR>
 
 " YouCompleteMe: https://github.com/Valloric/YouCompleteMe
 let g:ycm_confirm_extra_conf=0
+
+" DelimitMate: https://github.com/Raimondi/delimitMate
+function! BreakLine()
+  if (mode() == 'i')
+    return ((getline(".")[col(".")-2] == '{' && getline(".")[col(".")-1] == '}') ||
+          \(getline(".")[col(".")-2] == '(' && getline(".")[col(".")-1] == ')'))
+  else
+    return 0
+  endif
+endfun
+inoremap <expr> <CR> BreakLine() ? "<CR><ESC>O" : "<CR>"
 
 " Git commit messages helpers
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
