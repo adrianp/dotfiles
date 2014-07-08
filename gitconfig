@@ -70,6 +70,8 @@
     unstage = reset HEAD
     rg = reflog
     s = stash
+    ss = stash save
+    sa = stash apply
     sh = show --oneline
     sp = stash pop
     sl = stash list
