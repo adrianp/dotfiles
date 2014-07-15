@@ -315,6 +315,10 @@ endif
 " ask before leaving with unsaved changes
 set confirm
 
+" hide omnifunc scratch window after cursor move
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
 " expansions
 iab tes$ Tested-by: <@>
 iab rev$ Reviewed-by: <@>
@@ -326,5 +330,7 @@ iab hw$ "Hello World!"
 iab ipdb$ import ipdb<CR>ipdb.set_trace()
 iab cl$ console.log(
 iab st$ console.log(new Error().stack);
+iab tdt$ // TODO(tudor): 
+iab fmt$ // FIXME(tudor): 
 
 " installation specific mappings
