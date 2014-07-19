@@ -330,7 +330,7 @@ iab hw$ "Hello World!"
 iab ipdb$ import ipdb<CR>ipdb.set_trace()
 iab cl$ console.log(
 iab st$ console.log(new Error().stack);
-iab tdt$ // TODO(tudor): 
-iab fmt$ // FIXME(tudor): 
+iab tdt$ // TODO(tudor):
+iab fmt$ // FIXME(tudor):
 
 " installation specific mappings
