@@ -30,6 +30,7 @@
     clf = clean -f
     co = checkout
     coa = checkout .
+    cob = checkout -b
     cp = cherry-pick
     cpa = cherry-pick --abort
     cpc = cherry-pick --continue
