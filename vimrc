@@ -30,6 +30,7 @@ Bundle 'Raimondi/delimitMate'
 "Bundle 'marijnh/tern_for_vim'
 "Bundle 'LaTeX-Box-Team/LaTeX-Box'
 "Bundle 'scrooloose/syntastic'
+"Bundle 'Chiel92/vim-autoformat'
 
 "filetype plugin on
 filetype indent on
@@ -297,6 +298,9 @@ function! BreakLine()
   endif
 endfun
 inoremap <expr> <CR> BreakLine() ? "<CR><ESC>O" : "<CR>"
+
+" vim-autoformat: https://github.com/Chiel92/vim-autoformat
+noremap <leader>f :Autoformat<CR><CR>
 
 " Git commit messages helpers
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
