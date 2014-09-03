@@ -237,6 +237,7 @@ au BufRead,BufNewFile *.json set filetype=json
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/node_modules/*,*.pyc,*/bower_components/*,*/*.egg-info/*
 map <leader>b :CtrlPBuffer<CR>
 map <leader>p :CtrlP<CR>
+map <leader>t :CtrlPTag<CR>
 
 " don't set readonly mode in diff
 if &diff
