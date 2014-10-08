@@ -117,6 +117,7 @@ alias r='ranger .'
 alias js='node'
 alias gg='git gui &'
 alias cdv='cdvirtualenv'
+alias ds='dig +short'
 
 alias g='git'
 complete -o default -o nospace -F _git g
