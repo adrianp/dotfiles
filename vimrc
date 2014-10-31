@@ -185,6 +185,9 @@ set history=1000
 " display incomplete commands
 set showcmd
 
+" paste on a newline
+map <leader>o :pu<CR>
+
 " quickly open a temp file
 map <leader>q :e ~/tmp/scrapbook.txt<CR>
 
