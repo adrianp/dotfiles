@@ -228,6 +228,7 @@ let NERDTreeWinPos="right"
 let NERDTreeShowLineNumbers=0
 " disable buffer delete in NERDTree
 autocmd FileType nerdtree cnoreabbrev <buffer> bd <nop>
+let g:NERDTreeWinPos = "left"
 
 " Syntastic: https://github.com/scrooloose/syntastic
 map <leader>e :Errors<CR>
@@ -241,6 +242,8 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/node_modules/*,*.pyc,*/bower
 map <leader>b :CtrlPBuffer<CR>
 map <leader>p :CtrlP<CR>
 map <leader>t :CtrlPTag<CR>
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
 
 " don't set readonly mode in diff
 if &diff
