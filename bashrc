@@ -22,7 +22,7 @@ esac
 #bindir=${bindirs[$RANDOM % ${#bindirs[@]} ]}
 #echo "Did you know this command: $(whatis $(ls ${bindir} | shuf -n 1)) ?"
 
-echo $(ddate)
+#echo $(ddate)
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
