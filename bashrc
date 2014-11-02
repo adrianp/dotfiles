@@ -184,7 +184,7 @@ function set_ps1 {
     fi
     local load=$(uptime | sed -e "s/.*load average: \(.*\...\), \(.*\...\), \(.*\...\)/\1/" -e "s/ //g")
 
-    export PS1="${red}${load}${nocol}|$(date +"%H:%M.")${cyan}$(date +"%d")${nocol}|\u@${red}\h${nocol}:${green}\w${nocol}${purple}${git}${nocol}${red}${venv}${nocol}\n$ ";
+    export PS1="${red}${load}${nocol}|${cyan}\j${nocol}|$(date +"%H:%M.")${cyan}$(date +"%d")${nocol}|\u@${red}\h${nocol}:${green}\w${nocol}${purple}${git}${nocol}${red}${venv}${nocol}\n$ ";
 }
 export PROMPT_COMMAND=set_ps1
 
