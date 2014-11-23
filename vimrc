@@ -294,6 +294,9 @@ map <leader>3 :n#<CR>
 
 " YankRing: https://github.com/vim-scripts/YankRing.vim
 map <leader>yr :YRShow<CR>
+let g:yankring_min_element_length=3
+let g:yankring_window_use_bottom=0
+let g:yankring_history_dir='~/var/'
 
 " RainbowParentheses: https://github.com/kien/rainbow_parentheses.vim
 map <leader>rp :RainbowParenthesesToggleAll<CR>
