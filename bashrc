@@ -210,4 +210,9 @@ export GIT_PS1_SHOWUPSTREAM="auto git"
 # actually see Python output in some environments like Foreman
 #export PYTHONUNBUFFERED=True
 
-#export PATH=$PATH:/home/...
+# Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# Go development
+export GOPATH=$HOME/src/go
+export PATH=$PATH:$GOPATH/bin
