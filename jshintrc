@@ -30,7 +30,7 @@
     "expr": false,
     "funcscope": true,
     "gcl": true,
-    "globalstrict": false,
+    "globalstrict": true,
     "iterator": false,
     "lastsemic": false,
     "laxbreak": false,
