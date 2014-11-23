@@ -31,6 +31,7 @@ Bundle 'Raimondi/delimitMate'
 "Bundle 'LaTeX-Box-Team/LaTeX-Box'
 "Bundle 'scrooloose/syntastic'
 "Bundle 'Chiel92/vim-autoformat'
+"Bundle 'fatih/vim-go'
 
 "filetype plugin on
 filetype indent on
@@ -73,6 +74,10 @@ set list listchars=tab:▸\ ,trail:·
 set ts=4 sts=0 sw=4
 autocmd Filetype xml,bib,text,tex,plaintex,html setlocal ts=2 sts=2 sw=2
 
+" use tabs
+"set tabstop=4
+"set shiftwidth=4
+
 " display right margin
 set colorcolumn=80
 
@@ -85,6 +90,7 @@ set autoindent
 set smartindent
 set smarttab
 set expandtab
+"set noexpandtab " for using tabs
 set copyindent
 
 
