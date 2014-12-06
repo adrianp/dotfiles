@@ -238,6 +238,7 @@ let g:NERDTreeWinPos = "left"
 
 " Syntastic: https://github.com/scrooloose/syntastic
 map <leader>e :Errors<CR>
+map <leader>sr :SyntasticReset<CR>
 let g:syntastic_jshint_exec="/usr/bin/jshint"
 
 " detect JSON files correctly
