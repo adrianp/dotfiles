@@ -323,6 +323,11 @@ noremap <leader>f :Autoformat<CR><CR>
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 autocmd Filetype gitcommit setlocal textwidth=72
 
+" code folding settings
+set foldmethod=indent  " fold by syntax highlighting
+set foldnestmax=10  " deepest fold is 10 levels
+set nofoldenable  " dont fold by default
+
 " even faster ESC-aping (https://powerline.readthedocs.org/en/latest/tipstricks.html#vim)
 if ! has('gui_running')
     set ttimeoutlen=10
