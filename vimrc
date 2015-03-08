@@ -45,11 +45,14 @@ map <leader>r :reg<CR>
 " disable whietspace diff
 set diffopt=iwhite
 
-" be pretentious as fuck
+" be pretentious as fuck...
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
+
+" ...or just use the mouse
+"set mouse=a
 
 " toggle line numbers
 set number
