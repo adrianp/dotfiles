@@ -208,6 +208,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM="auto git"
+#export GIT_PS1_DESCRIBE_STYLE=branch
 
 # actually see Python output in some environments like Foreman
 #export PYTHONUNBUFFERED=True

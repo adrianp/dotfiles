@@ -21,7 +21,7 @@
     ca = commit -vsa
     cas = commit -va --squash
     cash = commit -va --squash HEAD
-    ce = clone -v --progress
+    ce = clone -v --progress --recursive
     cf = commit -v --fixup
     cfh = commit -v --amend
     caf = commit -va --fixup
@@ -59,6 +59,7 @@
     paf = push --all --force
     pt = push --tags
     ptf = push --tags --force
+    pr = push --recurse-submodules=on-demand
     r = rebase --preserve-merges
     ra = rebase --abort
     rc = rebase --continue
@@ -83,6 +84,7 @@
     up = pull --ff-only --stat -v --progress
     files = diff-tree --no-commit-id --name-only -r
     refs = for-each-ref --sort=-committerdate --format='%(refname:short) %(committerdate:short)'
+    rup = !git pull && git submodule sync --recursive && git submodule update --init --recursive
 [user]
     email = adrian@panescu.com
     name = Adrian-Tudor Panescu
@@ -92,6 +94,7 @@
     tool = meld
 [diff]
     tool = vimdiff
+    submodule = log
 [difftool]
     prompt = false
 [mergetool]
@@ -106,6 +109,8 @@
     requireForce = true
 [web]
     browser = google-chrome
+[status]
+    submoduleSummary = true
 [remote "dotfiles"]
     url=git@github.com:adrianp/dotfiles.git
     url=git@bitbucket.org:adrianp_/dotfiles.git
