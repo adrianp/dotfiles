@@ -3,10 +3,10 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 # set TAB to have VIM-like complete behaviour
-Tab: menu-complete
+Tab: complete
 
 # set SHIFT+TAB to have the default TAB behaviour
-"\e[Z": complete
+"\e[Z": menu-complete
 
 # display width of SHIFT+TAB suggestions, -1 is the default value
 set completion-display-width -1
