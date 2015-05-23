@@ -15,10 +15,10 @@
     big = bisect good
     bib = bisect bad
     bir = bisect reset
-    c = commit -vs
+    c = commit -v
     cs = commit -v --squash
     csh = commit -v --squash HEAD
-    ca = commit -vsa
+    ca = commit -va
     cas = commit -va --squash
     cash = commit -va --squash HEAD
     ce = clone -v --progress --recursive
