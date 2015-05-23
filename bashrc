@@ -120,6 +120,7 @@ alias ds='dig +short'
 alias off='sudo poweroff'
 alias fucking='sudo'
 alias fuck='sudo $(history -p \!\!)'  # repeat last command with sudo
+alias epoch='date +%s'
 
 alias g='git'
 complete -o default -o nospace -F _git g
