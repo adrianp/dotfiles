@@ -55,6 +55,7 @@
     mnf = merge --no-ff --stat -v --progress
     mt = mergetool
     p = push -u
+    po = push -u origin
     pa = push --all
     paf = push --all --force
     pt = push --tags
