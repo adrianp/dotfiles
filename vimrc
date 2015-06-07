@@ -119,6 +119,9 @@ endfunction
 " somewhat better spell-checker
 map <F3> :!aspell -l en_gb -c %<CR>
 
+" press leader key twice to enter visual mode
+map <Leader><Leader> V
+
 " colorscheme toggle
 let g:icantsee=1
 inoremap <silent> <F12> <c -O>:call ColorToggle()<CR>
@@ -358,6 +361,8 @@ iab sob$ Signed-off-by: Adrian-Tudor Panescu <adrian@panescu.com>
 iab hw$ "Hello World!"
 iab ipdb$ import ipdb<CR>ipdb.set_trace()
 iab cl$ console.log(
+iab ci$ console.info(
+iab ce$ console.error(
 iab st$ console.log(new Error().stack);
 iab tdt$ // TODO(tudor):
 iab fmt$ // FIXME(tudor):
