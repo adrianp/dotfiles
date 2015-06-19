@@ -12,27 +12,28 @@ nmap <silent> <leader>rc :e ~/src/dotfiles/vimrc<CR>
 nnoremap ; :
 
 " Vundle: https://github.com/gmarik/vundle.git
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 " Run $ vim +BundleInstall +qall or :BundleInstall
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-surround'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'vim-scripts/YankRing.vim'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Raimondi/delimitMate'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'vim-scripts/YankRing.vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Raimondi/delimitMate'
 
-"Bundle 'Valloric/YouCompleteMe'
-"Bundle 'marijnh/tern_for_vim'
-"Bundle 'LaTeX-Box-Team/LaTeX-Box'
-"Bundle 'scrooloose/syntastic'
-"Bundle 'Chiel92/vim-autoformat'
-"Bundle 'fatih/vim-go'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'marijnh/tern_for_vim'
+"Plugin 'LaTeX-Box-Team/LaTeX-Box'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'Chiel92/vim-autoformat'
+"Plugin 'fatih/vim-go'
 
+call vundle#end()
 "filetype plugin on
 filetype indent on
 
@@ -74,12 +75,16 @@ set nowb
 set list listchars=tab:▸\ ,trail:·
 
 " 4 spaces instead of tabs
-set ts=4 sts=0 sw=4
-autocmd Filetype xml,bib,text,tex,plaintex,html setlocal ts=2 sts=2 sw=2
+"set ts=4 sts=0 sw=4
+"autocmd Filetype xml,bib,text,tex,plaintex,html setlocal ts=2 sts=2 sw=2
 
 " use tabs
-"set tabstop=4
-"set shiftwidth=4
+set tabstop=4
+set shiftwidth=4
+
+" use tabs
+set tabstop=4
+set shiftwidth=4
 
 " display right margin
 set colorcolumn=80
@@ -92,8 +97,8 @@ set background=light
 set autoindent
 set smartindent
 set smarttab
-set expandtab
-"set noexpandtab " for using tabs
+"set expandtab
+set noexpandtab " for using tabs
 set copyindent
 
 
