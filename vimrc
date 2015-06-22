@@ -251,6 +251,7 @@ let g:NERDTreeWinPos = "left"
 map <leader>e :Errors<CR>
 map <leader>sr :SyntasticReset<CR>
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_quiet_messages = {"type": "style"}
 
 " detect JSON files correctly
 au BufRead,BufNewFile *.json set filetype=json
