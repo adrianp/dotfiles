@@ -13,7 +13,7 @@ nnoremap ; :
 
 " Vundle: https://github.com/gmarik/vundle.git
 set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
+call vundle#begin()
 
 " Run $ vim +BundleInstall +qall or :BundleInstall
 Plugin 'kien/ctrlp.vim'
@@ -34,8 +34,7 @@ Plugin 'Raimondi/delimitMate'
 "Plugin 'fatih/vim-go'
 
 call vundle#end()
-"filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " set xterm title
 set title
@@ -74,13 +73,9 @@ set nowb
 " display trailing white space
 set list listchars=tab:▸\ ,trail:·
 
-" 4 spaces instead of tabs
+" use spaces
 "set ts=4 sts=0 sw=4
 "autocmd Filetype xml,bib,text,tex,plaintex,html setlocal ts=2 sts=2 sw=2
-
-" use tabs
-set tabstop=4
-set shiftwidth=4
 
 " use tabs
 set tabstop=4
@@ -250,11 +245,15 @@ let g:NERDTreeWinPos = "left"
 " Syntastic: https://github.com/scrooloose/syntastic
 map <leader>e :Errors<CR>
 map <leader>sr :SyntasticReset<CR>
+map <leader>. :lnext<CR>
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_quiet_messages = {"type": "style"}
+let g:syntastic_less_checkers = ['lessc']
 
 " detect JSON files correctly
 au BufRead,BufNewFile *.json set filetype=json
+
+" detect LESS files correctly
+au BufRead,BufNewFile *.less set filetype=less
 
 " CTRLP: http://kien.github.io/ctrlp.vim/#installation
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/node_modules/*,*.pyc,*/bower_components/*,*/*.egg-info/*
@@ -372,5 +371,6 @@ iab ce$ console.error(
 iab st$ console.log(new Error().stack);
 iab tdt$ // TODO(tudor):
 iab fmt$ // FIXME(tudor):
+iab dbg$ /* eslint-disable no-debugger */ debugger;
 
 " installation specific mappings
