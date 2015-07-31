@@ -9,7 +9,7 @@ set -o errexit
 # where are the dotfiles stored (location of this script)
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-DOTFILES=( "bashrc" "gitconfig" "inputrc" "screenrc" "vimrc" "jshintrc" "jsbeautifyrc" "eslintrc" )
+DOTFILES=( "bashrc" "gitconfig" "inputrc" "vimrc" "jsbeautifyrc" "eslintrc" "tmux.conf" )
 
 mkdir ~/var || true
 mkdir ~/var/dotfiles_backup
