@@ -21,5 +21,5 @@ MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 MiscScrollAlternateScreen=TRUE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
-FontName=Monospace 13
+FontName=Monospace 14
 
