@@ -248,6 +248,7 @@ map <leader>sr :SyntasticReset<CR>
 map <leader>. :lnext<CR>
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_less_checkers = ['lessc']
+let g:syntastic_quiet_messages = {"!level":  "errors"}
 
 " detect JSON files correctly
 au BufRead,BufNewFile *.json set filetype=json
