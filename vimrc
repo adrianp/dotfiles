@@ -21,7 +21,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'vim-scripts/YankRing.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Raimondi/delimitMate'
@@ -124,6 +123,7 @@ map <Leader><Leader> V
 
 " colorscheme toggle
 let g:icantsee=1
+color default
 inoremap <silent> <F12> <c -O>:call ColorToggle()<CR>
 map <silent> <F12> :call ColorToggle()<CR>
 function! ColorToggle()
@@ -143,6 +143,7 @@ set pastetoggle=<F2>
 cmap w!! %!sudo tee > /dev/null %
 
 :map <leader>; :w<CR>
+:map <leader>' :wa<CR>
 
 " reload/open document shortcut
 :map <F5> :edit 
@@ -305,12 +306,6 @@ vnoremap <tab> %
 nnoremap <leader>w <C-w>v<C-w>l
 map <leader>3 :n#<CR>
 
-" YankRing: https://github.com/vim-scripts/YankRing.vim
-map <leader>yr :YRShow<CR>
-let g:yankring_min_element_length=3
-let g:yankring_window_use_bottom=0
-let g:yankring_history_dir='~/var/'
-
 " RainbowParentheses: https://github.com/kien/rainbow_parentheses.vim
 map <leader>rp :RainbowParenthesesToggleAll<CR>
 
@@ -356,6 +351,9 @@ set confirm
 " hide omnifunc scratch window after cursor move
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" use dictionary completion in spelling mode
+set complete+=kspell
 
 " expansions
 iab tes$ Tested-by: <@>
