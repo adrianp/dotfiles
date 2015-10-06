@@ -25,13 +25,13 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Raimondi/delimitMate'
 
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'marijnh/tern_for_vim'
-"Plugin 'LaTeX-Box-Team/LaTeX-Box'
-"Plugin 'scrooloose/syntastic'
-"Plugin 'Chiel92/vim-autoformat'
-"Plugin 'fatih/vim-go'
-"Plugin 'tikhomirov/vim-glsl'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'scrooloose/syntastic'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'fatih/vim-go'
+Plugin 'tikhomirov/vim-glsl'
 
 call vundle#end()
 filetype plugin indent on
@@ -83,6 +83,7 @@ set shiftwidth=4
 
 " display right margin
 set colorcolumn=80
+
 " display current line
 "set cursorline
 
