@@ -91,7 +91,7 @@ set background=light
 set autoindent
 set smartindent
 set smarttab
-"set expandtab
+"set expandtab " for using spaces
 set noexpandtab " for using tabs
 set copyindent
 
