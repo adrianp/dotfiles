@@ -74,7 +74,6 @@
     unstage = reset HEAD
     rg = reflog
     s = stash
-    sc = stash clear
     ss = stash save
     sa = stash apply
     sh = show --oneline
