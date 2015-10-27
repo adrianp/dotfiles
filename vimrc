@@ -31,6 +31,7 @@ Plugin 'Raimondi/delimitMate'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'Chiel92/vim-autoformat'
 "Plugin 'fatih/vim-go'
+"Plugin 'tikhomirov/vim-glsl'
 
 call vundle#end()
 filetype plugin indent on
@@ -82,6 +83,11 @@ set shiftwidth=4
 
 " display right margin
 set colorcolumn=80
+" display current line
+"set cursorline
+
+" don't redraw screen if not necessary
+set lazyredraw
 
 " syntax highlighting and auto/smart-indenting
 syntax on
@@ -363,7 +369,7 @@ iab rep$ Reported-by: <@>
 iab cab$ Co-authored-by: <@>
 iab sob$ Signed-off-by: Adrian-Tudor Panescu <adrian@panescu.com>
 iab hw$ "Hello World!"
-iab ipdb$ import ipdb<CR>ipdb.set_trace()
+iab ipdb$ import ipdb; ipdb.set_trace()
 iab cl$ console.log(
 iab ci$ console.info(
 iab ce$ console.error(
