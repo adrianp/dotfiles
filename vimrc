@@ -15,7 +15,7 @@ nnoremap ; :
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
-" Run $ vim +BundleInstall +qall or :BundleInstall
+" Run :VundleInstall or :VundleUpdate
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
@@ -24,7 +24,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Raimondi/delimitMate'
-
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
@@ -101,7 +100,6 @@ set smarttab
 "set expandtab " for using spaces
 set noexpandtab " for using tabs
 set copyindent
-
 
 " clear screen when exiting VIM
 "au VimLeave * :!clear
@@ -378,5 +376,3 @@ iab st$ console.log(new Error().stack);
 iab tdt$ // TODO(tudor):
 iab fmt$ // FIXME(tudor):
 iab dbg$ /* eslint-disable no-debugger */ debugger;
-
-" installation specific mappings
