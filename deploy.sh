@@ -29,15 +29,13 @@ ln -s $DIR/bash_aliases ~/.bash_aliases
 echo "Do not forget to source .bashrc!"
 
 mkdir ~/bin || true
-SCRIPTS=( "git-completion.sh" "git-new-workdir.sh" "git-prompt.sh" "nocaps.sh")
+SCRIPTS=( "git-completion.sh" "git-new-workdir.sh" "git-prompt.sh")
 
 for file in "${SCRIPTS[@]}"
 do
     cp $DIR/scripts/$file ~/bin/$file  # FIXME: do we really need to cp, ln does not work?
     chmod +x ~/bin/$file
 done
-
-echo "Do not forget to add ~/bin/nocaps.sh to startup!"
 
 # links don't work for this file
 mkdir ~/.config || true && mkdir ~/.config/xfce4 || true && mkdir ~/.config/xfce4/terminal || true
