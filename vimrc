@@ -15,7 +15,7 @@ nnoremap ; :
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
-" Run :VundleInstall or :VundleUpdate
+" Run :PluginInstall to install these
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
@@ -370,9 +370,7 @@ iab sob$ Signed-off-by: Adrian-Tudor Panescu <adrian@panescu.com>
 iab hw$ "Hello World!"
 iab ipdb$ import ipdb; ipdb.set_trace()
 iab cl$ console.log(
-iab ci$ console.info(
-iab ce$ console.error(
 iab st$ console.log(new Error().stack);
-iab tdt$ // TODO(tudor):
-iab fmt$ // FIXME(tudor):
+iab tda$ // TODO(adrian):
+iab fma$ // FIXME(adrian):
 iab dbg$ /* eslint-disable no-debugger */ debugger;
