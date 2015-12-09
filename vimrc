@@ -73,12 +73,12 @@ set nowb
 set list listchars=tab:▸\ ,trail:·
 
 " use spaces
-"set ts=4 sts=0 sw=4
-"autocmd Filetype xml,bib,text,tex,plaintex,html setlocal ts=2 sts=2 sw=2
+set ts=4 sts=0 sw=4
+autocmd Filetype xml,bib,text,tex,plaintex,html setlocal ts=2 sts=2 sw=2
 
 " use tabs
-set tabstop=4
-set shiftwidth=4
+"set tabstop=4
+"set shiftwidth=4
 
 " display right margin
 set colorcolumn=80
@@ -97,8 +97,8 @@ set background=light
 set autoindent
 set smartindent
 set smarttab
-"set expandtab " for using spaces
-set noexpandtab " for using tabs
+set expandtab " for using spaces
+"set noexpandtab " for using tabs
 set copyindent
 
 " clear screen when exiting VIM
