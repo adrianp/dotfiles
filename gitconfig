@@ -112,6 +112,3 @@
     browser = google-chrome
 [status]
     submoduleSummary = true
-[remote "dotfiles"]
-    url=git@github.com:adrianp/dotfiles.git
-    url=git@bitbucket.org:adrianp_/dotfiles.git
