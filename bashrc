@@ -220,3 +220,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Go development
 export GOPATH=$HOME/src/go
 export PATH=$PATH:$GOPATH/bin
+
+### Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
