@@ -92,7 +92,7 @@ source ~/bin/git-prompt.sh
 alias q='exit'
 alias d='du -h'
 alias l='ls -oAhpv --color --group-directories-first'
-alias k='killall -v -i -u $USER'
+alias k='killall -v -i -s 9 -u $USER'
 alias rm='rm -I'
 alias t='tmux attach'
 alias ~='cd ~'
