@@ -2,8 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-alias up='sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove'
-alias autoremove='sudo apt-get autoremove'
+alias up='sudo apt-get update -y && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y'
+alias autoremove='sudo apt-get autoremove -y'
 alias install='sudo apt-get install'
 alias remove='sudo apt-get remove'
 alias apts='apt-cache search'
