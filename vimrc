@@ -21,7 +21,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
@@ -29,9 +28,6 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'scrooloose/syntastic'
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'fatih/vim-go'
-Plugin 'tikhomirov/vim-glsl'
-Plugin 'wakatime/vim-wakatime'
 
 call vundle#end()
 filetype plugin indent on
@@ -311,9 +307,6 @@ vnoremap <tab> %
 " split vertically and switch to split
 nnoremap <leader>w <C-w>v<C-w>l
 map <leader>3 :n#<CR>
-
-" RainbowParentheses: https://github.com/kien/rainbow_parentheses.vim
-map <leader>rp :RainbowParenthesesToggleAll<CR>
 
 " YouCompleteMe: https://github.com/Valloric/YouCompleteMe
 let g:ycm_confirm_extra_conf=0
