@@ -195,7 +195,7 @@ set shortmess=atI
 set visualbell
 
 " command history size
-set history=1000
+set history=10000
 
 " display incomplete commands
 set showcmd
