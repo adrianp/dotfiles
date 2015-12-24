@@ -367,10 +367,11 @@ EOF
 " expansions
 iab tes$ Tested-by: <@>
 iab rev$ Reviewed-by: <@>
-iab akb$ Acked-by: <@>
+iab ack$ Acked-by: <@>
 iab rep$ Reported-by: <@>
 iab cab$ Co-authored-by: <@>
-iab sob$ Signed-off-by: Adrian-Tudor Panescu <adrian@panescu.com>
+iab sob$ Signed-off-by: <@>
+iab fix$ Fixes:
 iab hw$ "Hello World!"
 iab ipdb$ import ipdb; ipdb.set_trace()
 iab cl$ console.log(
