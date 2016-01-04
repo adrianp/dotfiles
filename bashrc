@@ -167,14 +167,26 @@ fi
 # vim bash shell mode
 set -o vi
 
+LASTCMD=$(date +%s)
+
 # the bash shell prompt; shows the load(1), time, day-of-month, login, host path,
 # git branch, and virtualenv
 function set_ps1 {
     green="\[\e[32;2m\]"
+    orange="\[\e[33;1m\]"
     red="\[\e[31;1m\]"
     cyan="\[\e[34;1m\]"
     purple="\[\e[38;5;91;1m\]"
     nocol="\e[m"
+
+    # calcultate time since last prompt
+    local _now=$(date +%s)
+    local _diff=$( printf "%02d:%02d:${orange}%02d${nocol}" \
+           $((  ( _now - LASTCMD ) / 3600))         \
+           $(( (( _now - LASTCMD ) % 3600) / 60 )) \
+           $((  ( _now - LASTCMD ) % 60))           \
+       )
+    LASTCMD=${_now}
 
     local git=$(__git_ps1 " (%s)")
     if [[ -z $git ]]; then
@@ -187,7 +199,7 @@ function set_ps1 {
     fi
     local load=$(uptime | sed -e "s/.*load average: \(.*\...\), \(.*\...\), \(.*\...\)/\1/" -e "s/ //g")
 
-    export PS1="${red}${load}${nocol}|${cyan}\j${nocol}|$(date +"%H:%M.")${cyan}$(date +"%d")${nocol}|\u@${red}\h${nocol}:${green}\w${nocol}${purple}${git}${nocol}${red}${venv}${nocol}\n$ ";
+    export PS1="${red}${load}${nocol}|${cyan}\j${nocol}|${_diff}|$(date +"%H:%M.")${cyan}$(date +"%d")${nocol}|\u@${red}\h${nocol}:${green}\w${nocol}${purple}${git}${nocol}${red}${venv}${nocol}\n$ ";
 }
 export PROMPT_COMMAND=set_ps1
 
