@@ -310,6 +310,7 @@ map <leader>3 :n#<CR>
 
 " YouCompleteMe: https://github.com/Valloric/YouCompleteMe
 let g:ycm_confirm_extra_conf=0
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 " DelimitMate: https://github.com/Raimondi/delimitMate
 function! BreakLine()
