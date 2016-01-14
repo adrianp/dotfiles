@@ -31,6 +31,7 @@
     co = checkout
     coa = checkout .
     cob = checkout -b
+    count = rev-list --count --left-right
     cp = cherry-pick
     cpa = cherry-pick --abort
     cpc = cherry-pick --continue
@@ -66,6 +67,7 @@
     rc = rebase --continue
     rem = remote -v
     ri = rebase -i --autosquash --preserve-merges
+    ril = rebase -i --autosquash
     rs = rebase --skip
     rt = reset
     rts = reset --soft
