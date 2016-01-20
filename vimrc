@@ -32,6 +32,10 @@ Plugin 'Chiel92/vim-autoformat'
 call vundle#end()
 filetype plugin indent on
 
+" file explorer options
+map <leader>t :Explore<CR>
+let g:netrw_liststyle=3
+
 " set xterm title
 set title
 
@@ -263,7 +267,6 @@ au BufRead,BufNewFile *.less set filetype=less
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/node_modules/*,*.pyc,*/bower_components/*,*/*.egg-info/*
 map <leader>b :CtrlPBuffer<CR>
 map <leader>p :CtrlP<CR>
-map <leader>t :CtrlPTag<CR>
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
 
