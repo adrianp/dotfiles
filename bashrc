@@ -118,9 +118,9 @@ alias js='node'
 alias cdv='cdvirtualenv'
 alias ds='dig +short'
 alias off='sudo poweroff'
-alias fucking='sudo'
 alias fuck='sudo $(history -p \!\!)'  # repeat last command with sudo
 alias epoch='date +%s'
+alias wan='dig +short myip.opendns.com @resolver1.opendns.com'
 
 alias g='git'
 complete -o default -o nospace -F _git g
