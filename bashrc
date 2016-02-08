@@ -227,11 +227,8 @@ export GIT_PS1_SHOWUPSTREAM="auto git"
 #export PYTHONUNBUFFERED=True
 
 # Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+#export PATH="/usr/local/heroku/bin:$PATH"
 
 # Go development
-export GOPATH=$HOME/src/go
-export PATH=$PATH:$GOPATH/bin
-
-### Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+#export GOPATH=$HOME/src/go
+#export PATH=$PATH:$GOPATH/bin
