@@ -28,6 +28,7 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'scrooloose/syntastic'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'alvan/vim-closetag'
 
 call vundle#end()
 filetype plugin indent on
@@ -325,6 +326,7 @@ function! BreakLine()
   endif
 endfun
 inoremap <expr> <CR> BreakLine() ? "<CR><ESC>O" : "<CR>"
+let delimitMate_excluded_ft = "html"
 
 " vim-autoformat: https://github.com/Chiel92/vim-autoformat
 noremap <leader>f :Autoformat<CR><CR>
@@ -367,6 +369,9 @@ if 'VIRTUAL_ENV' in os.environ:
   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
   execfile(activate_this, dict(__file__=activate_this))
 EOF
+
+" HTML tags jumping
+runtime macros/matchit.vim
 
 " expansions
 iab tes$ Tested-by: <@>
