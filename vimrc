@@ -83,7 +83,7 @@ autocmd Filetype xml,bib,text,tex,plaintex,html setlocal ts=2 sts=2 sw=2
 "set shiftwidth=4
 
 " display right margin
-set colorcolumn=80
+set colorcolumn=80,100,120
 
 " display current line
 "set cursorline
@@ -129,17 +129,20 @@ map <F3> :!aspell -l en_gb -c %<CR>
 map <Leader><Leader> V
 
 " colorscheme toggle
-let g:icantsee=1
 color default
+let g:icantsee=1
+highlight ColorColumn ctermbg=LightGray
 inoremap <silent> <F12> <c -O>:call ColorToggle()<CR>
 map <silent> <F12> :call ColorToggle()<CR>
 function! ColorToggle()
     if g:icantsee == 1
         color evening
         let g:icantsee=0
+        highlight ColorColumn ctermbg=LightGray
     else
         color default
         let g:icantsee=1
+        highlight ColorColumn ctermbg=LightGray
     endif
 endfunction
 
