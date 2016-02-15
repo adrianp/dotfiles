@@ -5,7 +5,7 @@ ColorBackground=#fdfdf6f6e3e3
 ColorPalette=#000000000000;#ffff59995999;#0000aaaa0000;#aaaa55550000;#00000000aaaa;#aaaa0000aaaa;#0000aaaaaaaa;#aaaaaaaaaaaa;#555555555555;#ffff19991999;#33d0e14733d0;#ffff8ef923d7;#55555555ffff;#ffff5555ffff;#53ddd709d709;#ffffffffffff
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
-MiscBordersDefault=TRUE
+MiscBordersDefault=FALSE
 MiscCursorBlinks=FALSE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
 MiscDefaultGeometry=80x24
@@ -22,4 +22,6 @@ MiscHighlightUrls=TRUE
 MiscScrollAlternateScreen=TRUE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 FontName=Monospace 14
+ShortcutsNoMenukey=TRUE
+ShortcutsNoMnemonics=TRUE
 
