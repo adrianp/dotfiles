@@ -24,4 +24,5 @@ ScrollingBar=TERMINAL_SCROLLBAR_NONE
 FontName=Monospace 14
 ShortcutsNoMenukey=TRUE
 ShortcutsNoMnemonics=TRUE
+TitleMode=TERMINAL_TITLE_HIDE
 
