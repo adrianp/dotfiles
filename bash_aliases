@@ -13,6 +13,7 @@ alias nf='sudo tc qdisc change dev wlan0 root netem delay 0ms'
 alias rdm='xfwm4 --replace &'
 alias dy='youtube-dl --extract-audio --audio-format mp3'
 alias osup='sudo do-release-upgrade -d'
+alias mkv='mkvirtualenv --no-site-packages'
 
 alias serv='sudo service'
 make-completion-wrapper _service _serv service
