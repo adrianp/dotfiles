@@ -46,12 +46,6 @@ map <leader>r :reg<CR>
 " disable whietspace diff
 set diffopt=iwhite
 
-" be pretentious as fuck...
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
 " ...or just use the mouse
 "set mouse=a
 
@@ -376,6 +370,12 @@ EOF
 
 " HTML tags jumping
 runtime macros/matchit.vim
+
+" Use arrows for pane resizing (note that this disables arrow scroll, use HJKL)
+map <Up> <C-W>-
+map <Down> <C-W>+
+map <Right> <C-W>>
+map <Left> <C-W><
 
 " expansions
 iab tes$ Tested-by: <@>
