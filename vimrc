@@ -386,7 +386,9 @@ iab cab$ Co-authored-by: <@>
 iab sob$ Signed-off-by: <@>
 iab fix$ Fixes:
 iab hw$ "Hello World!"
+iab pdb$ import pdb; pdb.set_trace()
 iab ipdb$ import ipdb; ipdb.set_trace()
+iab pudb$ import pudb; pu.db
 iab cl$ console.log(
 iab st$ console.log(new Error().stack);
 iab tda$ // TODO(adrian):
