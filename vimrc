@@ -206,7 +206,7 @@ set showcmd
 map <leader>o :pu<CR>
 
 " quickly open a temp file
-map <leader>q :e ~/var/scrapbook.txt<CR>
+map <leader>q :e ~/Dropbox/scrapbook.txt<CR>
 
 " remember cursor and buffers states
 autocmd BufReadPost *
