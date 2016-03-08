@@ -70,7 +70,7 @@ set list listchars=tab:▸\ ,trail:·
 
 " use spaces
 set ts=4 sts=0 sw=4
-autocmd Filetype xml,bib,text,tex,plaintex,html setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript,jsx,xml,bib,text,tex,plaintex,html setlocal ts=2 sts=2 sw=2
 
 " use tabs
 "set tabstop=4
@@ -88,7 +88,7 @@ set lazyredraw
 " syntax highlighting and auto/smart-indenting
 syntax on
 filetype on
-set synmaxcol=2048
+set synmaxcol=120
 set background=light
 set autoindent
 set smartindent

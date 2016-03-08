@@ -67,8 +67,7 @@
     ra = rebase --abort
     rc = rebase --continue
     rem = remote -v
-    ri = rebase -i --autosquash --preserve-merges
-    ril = rebase -i --autosquash
+    ri = rebase -i --autosquash
     rs = rebase --skip
     rt = reset
     rts = reset --soft
