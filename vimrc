@@ -377,6 +377,10 @@ map <Down> <C-W>+
 map <Right> <C-W>>
 map <Left> <C-W><
 
+
+" get full path to current file (like readlink -f)
+map <leader>rlf :echo expand('%:p')<CR>
+
 " expansions
 iab tes$ Tested-by: <@>
 iab rev$ Reviewed-by: <@>
