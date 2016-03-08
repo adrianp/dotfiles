@@ -240,6 +240,7 @@ vnoremap <silent> # :<C-U>
 
 " NERDTree: https://github.com/scrooloose/nerdtree
 map <leader>n :NERDTreeToggle<CR>
+map <leader>ntf :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 let NERDTreeWinPos="right"
 let NERDTreeShowLineNumbers=0
