@@ -39,6 +39,9 @@ shopt -s histappend
 # into the editing buffer, rather than directly executing it.
 shopt -s histverify
 
+# save multi-line commands as one command
+shopt -s cmdhist
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -84,6 +87,15 @@ function $function_name {
 }"
     eval "$function"
 }
+
+# !!<space> will replace the !! with your last command
+bind Space:magic-space
+
+# treat hyphens and underscores as equivalent for completion
+bind "set completion-map-case on"
+
+# display completion matches for ambiguous patterns at first tab press
+bind "set show-all-if-ambiguous on"
 
 source ~/bin/git-completion.sh
 source ~/bin/git-prompt.sh
