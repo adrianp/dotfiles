@@ -88,7 +88,7 @@ set lazyredraw
 " syntax highlighting and auto/smart-indenting
 syntax on
 filetype on
-set synmaxcol=120
+set synmaxcol=200
 set background=light
 set autoindent
 set smartindent
