@@ -135,6 +135,7 @@ alias fuck='sudo $(history -p \!\!)'  # repeat last command with sudo
 alias epoch='date +%s'
 alias wan='dig +short myip.opendns.com @resolver1.opendns.com'
 alias u='uptime'
+alias rlf='readlink -f'
 
 alias g='git'
 complete -o default -o nospace -F _git g
