@@ -252,6 +252,7 @@ let g:NERDTreeWinPos = "left"
 map <leader>e :Errors<CR>
 map <leader>sr :SyntasticReset<CR>
 map <leader>. :lnext<CR>
+map <leader>z :lclose<CR>
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_less_checkers = ['lessc']
 let g:syntastic_quiet_messages = {"!level":  "errors"}
