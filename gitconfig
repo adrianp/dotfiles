@@ -49,6 +49,7 @@
     gp = grep --untracked --ignore-case --line-number --break
     su = submodule update
     k = log --graph --decorate --pretty=oneline --abbrev-commit
+    ka = log --graph --remotes --decorate --pretty=oneline --abbrev-commit
     km = log --graph --pretty=format:\"%C(yellow)%h%Creset%C(auto)%d%Creset %s %C(blue ul)%ae%Creset\"
     kl = log --decorate --pretty=oneline --abbrev-commit --name-status HEAD~1..HEAD
     last = log -1 -p --stat
