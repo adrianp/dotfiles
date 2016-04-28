@@ -397,8 +397,8 @@ iab ipdb$ import ipdb; ipdb.set_trace()
 iab pudb$ import pudb; pu.db
 iab cl$ console.log(
 iab st$ console.log(new Error().stack);
-iab tda$ // TODO(adrian):
-iab fma$ // FIXME(adrian):
+iab tdt$ TODO(tudor):
+iab fmt$ FIXME(tudor):
 iab dbg$ /* eslint-disable no-debugger */ debugger;
 iab #$ ####################################################################################################
 iab -$ #---------------------------------------------------------------------------------------------------
