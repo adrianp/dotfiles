@@ -256,9 +256,10 @@ map <leader>e :Errors<CR>
 map <leader>sr :SyntasticReset<CR>
 map <leader>. :lnext<CR>
 map <leader>z :lclose<CR>
+let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_less_checkers = ['lessc']
-let g:syntastic_quiet_messages = {"!level":  "errors"}
+"let g:syntastic_quiet_messages = {"!level":  "errors"}
 let g:syntastic_python_pylint_post_args = '--rcfile=.pylintrc' 
 
 " detect JSON files correctly
@@ -364,14 +365,14 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 set complete+=kspell
 
 " virtualenv support for Python
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
+"py << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+  "project_base_dir = os.environ['VIRTUAL_ENV']
+  "activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  "execfile(activate_this, dict(__file__=activate_this))
+"EOF
 
 " HTML tags jumping
 runtime macros/matchit.vim
@@ -405,3 +406,4 @@ iab fmt$ FIXME(tudor):
 iab dbg$ /* eslint-disable no-debugger */ debugger;
 iab #$ ####################################################################################################
 iab -$ #---------------------------------------------------------------------------------------------------
+iab ptb$ import traceback; traceback.print_exc()
