@@ -90,7 +90,7 @@
     refs = for-each-ref --sort=-committerdate --format='%(refname:short) %(committerdate:short)'
     rup = !git pull && git submodule sync --recursive && git submodule update --init --recursive
 [user]
-    email = adrian@panescu.com
+    email = tudor@figshare.com
     name = Adrian-Tudor Panescu
 [color]
     ui = auto
