@@ -9,7 +9,8 @@ set -o errexit
 # where are the dotfiles stored (location of this script)
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-DOTFILES=( "bashrc" "gitconfig" "inputrc" "vimrc" "jsbeautifyrc" "eslintrc" "tmux.conf" )
+#DOTFILES=( "bashrc" "gitconfig" "inputrc" "vimrc" "jsbeautifyrc" "eslintrc" "tmux.conf" )
+DOTFILES=( "bashrc" "gitconfig" "inputrc" "vimrc" "tmux.conf" )
 
 mkdir ~/var || true
 mkdir ~/var/dotfiles_backup
@@ -38,10 +39,10 @@ do
 done
 
 # links don't work for this file
-mkdir ~/.config || true && mkdir ~/.config/xfce4 || true && mkdir ~/.config/xfce4/terminal || true
-cp $DIR/terminalrc ~/.config/xfce4/terminal/terminalrc
+#mkdir ~/.config || true && mkdir ~/.config/xfce4 || true && mkdir ~/.config/xfce4/terminal || true
+#cp $DIR/terminalrc ~/.config/xfce4/terminal/terminalrc
 
-mkdir ~/.ssh || true
+#mkdir ~/.ssh || true
 ln -s $DIR/ssh.config ~/.ssh/config
 
 echo "Done!"
