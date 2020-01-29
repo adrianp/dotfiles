@@ -25,15 +25,19 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'marijnh/tern_for_vim'
+"Plugin 'marijnh/tern_for_vim'
 "Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'scrooloose/syntastic'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'alvan/vim-closetag'
 Plugin 'python/black'
+Plugin 'tpope/vim-rhubarb'
 
 call vundle#end()
 filetype plugin indent on
+
+" cursor won't blink
+set guicursor+=a:blinkon0
 
 let g:black_virtualenv="~/.vim_black"
 let g:black_linelength=120
@@ -286,8 +290,11 @@ if &diff
 endif
 
 " copy/ paste to X system clipboard
-map <leader>xx :w !xsel -i -b<CR><CR>
-map <leader>vv :r!xsel -b<CR>
+"map <leader>xx :w !xsel -i -b<CR><CR>
+"map <leader>vv :r!xsel -b<CR>
+
+" MacVim: copy to system clipboard
+set clipboard=unnamed
 
 " LaTeX-Box: https://github.com/LaTeX-Box-Team/LaTeX-Box
 map <leader>mkk :Latexmk<CR>
