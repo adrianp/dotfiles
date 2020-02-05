@@ -16,6 +16,7 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 " Run :PluginInstall to install these
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
@@ -29,9 +30,13 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'alvan/vim-closetag'
+Plugin 'python/black'
 
 call vundle#end()
 filetype plugin indent on
+
+let g:black_virtualenv="~/.vim_black"
+let g:black_linelength=120
 
 " file explorer options
 map <leader>t :Explore<CR>

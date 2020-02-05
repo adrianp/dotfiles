@@ -115,3 +115,5 @@
     browser = google-chrome
 [status]
     submoduleSummary = true
+[rebase]
+    instructionFormat = %s [%an]

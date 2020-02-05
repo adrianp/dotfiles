@@ -245,5 +245,5 @@ export GIT_PS1_SHOWUPSTREAM="auto git"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # Go development
-#export GOPATH=$HOME/src/go
-#export PATH=$PATH:$GOPATH/bin
+#export PATH=$PATH:$(go env GOPATH)/bin
+#export GOPATH=$(go env GOPATH)
