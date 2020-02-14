@@ -54,6 +54,7 @@
     kl = log --decorate --pretty=oneline --abbrev-commit --name-status HEAD~1..HEAD
     last = log -1 -p --stat
     l = log
+    ma = merge --abort
     mff = merge --ff-only --stat -v --progress
     mnf = merge --no-ff --stat -v --progress
     mt = mergetool
@@ -95,7 +96,7 @@
 [color]
     ui = auto
 [merge]
-    tool = meld
+    tool = diffmerge
 [diff]
     tool = vimdiff
     submodule = log
