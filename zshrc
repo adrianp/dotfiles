@@ -1,8 +1,7 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# vi mode
-bindkey -v
+bindkey -e
 
 # history options
 HISTFILE="$HOME/.zsh_history"
@@ -68,3 +67,6 @@ alias up='brew update && brew upgrade && brew cleanup'
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 fpath=(~/.zsh $fpath)
 autoload -Uz compinit && compinit
+
+bindkey "^[[1~" beginning-of-line # home
+bindkey "^[[4~" end-of-line # end
