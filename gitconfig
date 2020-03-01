@@ -28,6 +28,7 @@
     cafh = commit -va --amend
     cln = clean -n
     clf = clean -f
+    cc = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -10"
     co = checkout
     coa = checkout .
     cob = checkout -b
