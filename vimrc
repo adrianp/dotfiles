@@ -22,7 +22,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-fugitive'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'marijnh/tern_for_vim'
@@ -30,8 +29,10 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'alvan/vim-closetag'
-Plugin 'python/black'
+Plugin 'psf/black'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
+Plugin 'tommcdo/vim-fubitive'
 
 call vundle#end()
 filetype plugin indent on
@@ -265,7 +266,7 @@ map <leader>e :Errors<CR>
 map <leader>sr :SyntasticReset<CR>
 map <leader>. :lnext<CR>
 map <leader>z :lclose<CR>
-let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['pylint', 'flake8']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_less_checkers = ['lessc']
 "let g:syntastic_quiet_messages = {"!level":  "errors"}
@@ -293,8 +294,9 @@ endif
 "map <leader>xx :w !xsel -i -b<CR><CR>
 "map <leader>vv :r!xsel -b<CR>
 
-" MacVim: copy to system clipboard
-set clipboard=unnamed
+" copy/ paste to/from Mac system clipboard
+map <leader>xx :.w !pbcopy<CR><CR>
+map <leader>vv :r !pbpaste<CR>
 
 " LaTeX-Box: https://github.com/LaTeX-Box-Team/LaTeX-Box
 map <leader>mkk :Latexmk<CR>
