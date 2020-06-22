@@ -63,6 +63,7 @@ alias rlf='readlink -f'
 alias g='git'
 alias vim='mvim -v'
 alias up='brew update && brew upgrade && brew cleanup'
+alias dcr='docker-compose run --service-ports'
 
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 fpath=(~/.zsh $fpath)

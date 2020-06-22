@@ -29,10 +29,11 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'alvan/vim-closetag'
-Plugin 'psf/black'
+"Plugin 'psf/black'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'tommcdo/vim-fubitive'
+Plugin 'pixelneo/vim-python-docstring'
 
 call vundle#end()
 filetype plugin indent on
@@ -76,7 +77,7 @@ set noswapfile
 set nowb
 
 " display trailing white space
-set list listchars=tab:▸\ ,trail:·
+set list listchars=tab:▸\ ,nbsp:·,trail:·
 
 " use spaces
 set ts=4 sts=0 sw=4

@@ -92,12 +92,13 @@
     refs = for-each-ref --sort=-committerdate --format='%(refname:short) %(committerdate:short)'
     rup = !git pull && git submodule sync --recursive && git submodule update --init --recursive
 [user]
-    email = tudor@figshare.com
+    email = adrian@panescu.com
     name = Adrian-Tudor Panescu
 [color]
     ui = auto
 [merge]
-    tool = diffmerge
+	tool = meld
+	prompt = false
 [diff]
     tool = vimdiff
     submodule = log
