@@ -33,7 +33,6 @@ Plugin 'alvan/vim-closetag'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'tommcdo/vim-fubitive'
-Plugin 'pixelneo/vim-python-docstring'
 
 call vundle#end()
 filetype plugin indent on
@@ -262,6 +261,11 @@ let NERDTreeShowLineNumbers=0
 autocmd FileType nerdtree cnoreabbrev <buffer> bd <nop>
 let g:NERDTreeWinPos = "left"
 
+" automatically open if vim starts with no file
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+
 " Syntastic: https://github.com/scrooloose/syntastic
 map <leader>e :Errors<CR>
 map <leader>sr :SyntasticReset<CR>
@@ -270,8 +274,8 @@ map <leader>z :lclose<CR>
 let g:syntastic_python_checkers = ['pylint', 'flake8']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_less_checkers = ['lessc']
-"let g:syntastic_quiet_messages = {"!level":  "errors"}
 let g:syntastic_python_pylint_post_args = '--rcfile=.pylintrc' 
+let g:syntastic_quiet_messages = {"!level":  "errors"}
 
 " detect JSON files correctly
 au BufRead,BufNewFile *.json set filetype=json
@@ -334,6 +338,13 @@ map <leader>3 :n#<CR>
 " YouCompleteMe: https://github.com/Valloric/YouCompleteMe
 let g:ycm_confirm_extra_conf=0
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+let g:ycm_python_interpreter_path = ''
+let g:ycm_python_sys_path = []
+let g:ycm_extra_conf_vim_data = [
+  \  'g:ycm_python_interpreter_path',
+  \  'g:ycm_python_sys_path'
+  \]
+let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
 
 " DelimitMate: https://github.com/Raimondi/delimitMate
 function! BreakLine()

@@ -97,8 +97,8 @@
 [color]
     ui = auto
 [merge]
-	tool = meld
-	prompt = false
+    tool = meld
+    prompt = false
 [diff]
     tool = vimdiff
     submodule = log

@@ -14,9 +14,17 @@ setopt HIST_REDUCE_BLANKS
 bindkey '^R' history-incremental-search-backward
 
 export PATH="/usr/local/opt/python/libexec/bin:/usr/local/bin:$PATH"
-export WORKON_HOME=~/.virtualenvs
-[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
 export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
+
+# Setting PATH for Python 3 installed by brew
+export PATH=/usr/local/share/python:$PATH
+
+# Configuration for virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+source /usr/local/bin/virtualenvwrapper.sh
+
 
 # Load version control information
 autoload -Uz vcs_info
