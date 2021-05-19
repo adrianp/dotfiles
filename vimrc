@@ -26,11 +26,11 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
-"Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'scrooloose/syntastic'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'alvan/vim-closetag'
 Plugin 'python/black'
+Plugin 'tpope/vim-rhubarb'
 
 call vundle#end()
 filetype plugin indent on
@@ -214,7 +214,7 @@ set showcmd
 map <leader>o :pu<CR>
 
 " quickly open a temp file
-map <leader>q :e ~/Dropbox/scrapbook.txt<CR>
+map <leader>q :e ~/var/scrapbook.txt<CR>
 
 " remember cursor and buffers states
 autocmd BufReadPost *
@@ -261,11 +261,17 @@ map <leader>e :Errors<CR>
 map <leader>sr :SyntasticReset<CR>
 map <leader>. :lnext<CR>
 map <leader>z :lclose<CR>
-let g:syntastic_python_checkers = ['pylint']
+"let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_less_checkers = ['lessc']
 "let g:syntastic_quiet_messages = {"!level":  "errors"}
 let g:syntastic_python_pylint_post_args = '--rcfile=.pylintrc' 
+let g:syntastic_python_flake8_args='--max-line-length=120'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_jump = 0
 
 " detect JSON files correctly
 au BufRead,BufNewFile *.json set filetype=json
@@ -406,8 +412,8 @@ iab ipdb$ import ipdb; ipdb.set_trace()
 iab pudb$ import pudb; pu.db
 iab cl$ console.log(
 iab st$ console.log(new Error().stack);
-iab tdt$ TODO(tudor):
-iab fmt$ FIXME(tudor):
+iab tdt$ # TODO(adrianp):
+iab fmt$ # FIXME(adrianp):
 iab dbg$ /* eslint-disable no-debugger */ debugger;
 iab #$ ####################################################################################################
 iab -$ #---------------------------------------------------------------------------------------------------
