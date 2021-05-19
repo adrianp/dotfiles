@@ -247,3 +247,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Go development
 #export PATH=$PATH:$(go env GOPATH)/bin
 #export GOPATH=$(go env GOPATH)
+
+source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
