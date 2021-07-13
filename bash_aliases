@@ -12,9 +12,9 @@ alias ns='echo "sudo tc qdisc add dev wlan0 root netem delay 200ms" && sudo tc q
 alias nf='sudo tc qdisc change dev wlan0 root netem delay 0ms'
 alias osup='sudo do-release-upgrade -d'
 alias mkv='mkvirtualenv -p python2'
-alias mkv3='mkvirtualenv -p python3'
+alias mkv3='mkvirtualenv -p python3.7'
 alias docker='sudo docker'
-alias dup='sudo docker-compose up'
+alias dup='sudo -E COMPOSE_DOCKER_CLI_BUILD=1 docker-compose up'
 
 alias serv='sudo service'
 make-completion-wrapper _service _serv service

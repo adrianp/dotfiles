@@ -97,8 +97,8 @@ bind "set completion-map-case on"
 # display completion matches for ambiguous patterns at first tab press
 bind "set show-all-if-ambiguous on"
 
-source ~/bin/git-completion.sh
-source ~/bin/git-prompt.sh
+source /home/tudor/src/dotfiles/scripts/git-completion.sh
+source /home/tudor/src/dotfiles/scripts/git-prompt.sh
 
 # general aliases
 alias q='exit'
@@ -248,8 +248,17 @@ export PATH="/usr/local/heroku/bin:$PATH"
 #export PATH=$PATH:$(go env GOPATH)/bin
 #export GOPATH=$(go env GOPATH)
 
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+#source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+export WORKON_HOME=$HOME/.virtualenvs
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+pyenv virtualenvwrapper_lazy
