@@ -14,7 +14,7 @@ setopt HIST_REDUCE_BLANKS
 bindkey '^R' history-incremental-search-backward
 
 export PATH="/usr/local/opt/python/libexec/bin:/usr/local/bin:$PATH"
-export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
+#export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
 
 # Setting PATH for Python 3 installed by brew
 export PATH=/usr/local/share/python:$PATH
