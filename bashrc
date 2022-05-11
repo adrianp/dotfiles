@@ -262,3 +262,4 @@ export WORKON_HOME=$HOME/.virtualenvs
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 pyenv virtualenvwrapper_lazy
+. "$HOME/.cargo/env"

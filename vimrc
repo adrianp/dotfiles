@@ -31,6 +31,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'alvan/vim-closetag'
 Plugin 'python/black'
 Plugin 'tpope/vim-rhubarb'
+Plugin 'chrisbra/csv.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -85,7 +86,7 @@ set report=0
 "set shiftwidth=4
 
 " display right margin
-set colorcolumn=80,100,120
+set colorcolumn=100,120
 
 " display current line
 "set cursorline
@@ -261,7 +262,7 @@ map <leader>e :Errors<CR>
 map <leader>sr :SyntasticReset<CR>
 map <leader>. :lnext<CR>
 map <leader>z :lclose<CR>
-"let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_less_checkers = ['lessc']
 "let g:syntastic_quiet_messages = {"!level":  "errors"}
@@ -269,7 +270,7 @@ let g:syntastic_python_pylint_post_args = '--rcfile=.pylintrc'
 let g:syntastic_python_flake8_args='--max-line-length=120'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_jump = 0
 
@@ -374,6 +375,9 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " use dictionary completion in spelling mode
 set complete+=kspell
+
+" don't higlight CSV collumns
+let g:csv_no_column_highlight = 1
 
 " virtualenv support for Python
 "py << EOF
