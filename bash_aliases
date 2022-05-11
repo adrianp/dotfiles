@@ -15,6 +15,7 @@ alias mkv='mkvirtualenv -p python2'
 alias mkv3='mkvirtualenv -p python3.7'
 alias docker='sudo docker'
 alias dup='sudo -E COMPOSE_DOCKER_CLI_BUILD=1 docker-compose up'
+alias gopro='sudo gopro webcam -r 1080 -f narrow -a'
 
 alias serv='sudo service'
 make-completion-wrapper _service _serv service
