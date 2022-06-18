@@ -207,7 +207,7 @@ nnoremap <C-y> 5<C-y>
 set shortmess=atI
 
 " don't be obnoxious
-set visualbell
+set vb t_vb=
 
 " command history size
 set history=10000
