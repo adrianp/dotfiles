@@ -106,10 +106,11 @@ alias d='du -h'
 alias l='ls -oAhpv --color --group-directories-first'
 alias k='killall -v -i -s 9 -u $USER'
 alias rm='rm -I'
+alias t2='tmux -2'
 alias t='tmux attach'
 alias ~='cd ~'
 alias b='cd -'
-alias v='vim'
+alias v='nvim'
 alias gp='grep --color=auto -rn . -e'
 alias c='reset'
 alias gg='gitk'
@@ -123,7 +124,7 @@ alias pud='pushd'
 alias pudd='pushd .'
 alias pod='popd'
 alias dr='dirs'
-alias vrc='vim ~/.vimrc'
+alias vrc='nvim ~/.vimrc'
 alias mp='mkdir -p'
 alias tree='tree -aFC --dirsfirst -L 7 -I .git'
 alias r='ranger .'
@@ -136,6 +137,7 @@ alias epoch='date +%s'
 alias wan='dig +short myip.opendns.com @resolver1.opendns.com'
 alias u='uptime'
 alias rlf='readlink -f'
+alias vimdiff='nvim -d'
 
 alias g='git'
 complete -o default -o nospace -F _git g
@@ -226,10 +228,10 @@ if [ -d "$HOME/bin" ]; then
     export PATH=$HOME/bin:$PATH
 fi
 
-# we prefer vim for SVN, Git, etc.
-export SVN_EDITOR=vim
-export EDITOR=vim
-export VISUAL=vim
+# we prefer nvim for SVN, Git, etc.
+export SVN_EDITOR=nvim
+export EDITOR=nvim
+export VISUAL=nvim
 
 # git-prompt exports
 export GIT_PS1_SHOWDIRTYSTATE=1

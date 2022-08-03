@@ -29,15 +29,15 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'alvan/vim-closetag'
-Plugin 'python/black'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'chrisbra/csv.vim'
+Plugin 'github/copilot.vim'
 
 call vundle#end()
+
 filetype plugin indent on
 
-let g:black_virtualenv="~/.vim_black"
-let g:black_linelength=120
+let g:python3_host_prog = "/home/tudor/.virtualenvs/nvim/bin/python"
 
 " file explorer options
 map <leader>t :Explore<CR>
@@ -129,12 +129,13 @@ endfunction
 map <F3> :!aspell -l en_gb -c %<CR>
 
 " press leader key twice to enter visual mode
-map <Leader><Leader> V
+"map <Leader><Leader> V
 
 " colorscheme toggle
 color default
 let g:icantsee=1
 highlight ColorColumn ctermbg=LightGray
+set background=light
 inoremap <silent> <F12> <c -O>:call ColorToggle()<CR>
 map <silent> <F12> :call ColorToggle()<CR>
 function! ColorToggle()
@@ -142,12 +143,17 @@ function! ColorToggle()
         color evening
         let g:icantsee=0
         highlight ColorColumn ctermbg=LightGray
+        set bg=dark
     else
         color default
         let g:icantsee=1
         highlight ColorColumn ctermbg=LightGray
+        set background=light
     endif
 endfunction
+
+" don't use "thin" cursor in insert mode (neovim)
+set guicursor=
 
 " code paste toggle (no indenting)
 set pastetoggle=<F2>
@@ -262,16 +268,16 @@ map <leader>e :Errors<CR>
 map <leader>sr :SyntasticReset<CR>
 map <leader>. :lnext<CR>
 map <leader>z :lclose<CR>
-let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_less_checkers = ['lessc']
-"let g:syntastic_quiet_messages = {"!level":  "errors"}
+let g:syntastic_quiet_messages = {"!level":  "errors"}
 let g:syntastic_python_pylint_post_args = '--rcfile=.pylintrc' 
 let g:syntastic_python_flake8_args='--max-line-length=120'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 let g:syntastic_auto_jump = 0
 
 " detect JSON files correctly
@@ -412,7 +418,7 @@ iab sob$ Signed-off-by: <@>
 iab fix$ Fixes:
 iab hw$ "Hello World!"
 iab pdb$ import pdb; pdb.set_trace()
-iab ipdb$ import ipdb; ipdb.set_trace()
+iab ipdb$ import ipdb; ipdb.set_trace(); pass
 iab pudb$ import pudb; pu.db
 iab cl$ console.log(
 iab st$ console.log(new Error().stack);
