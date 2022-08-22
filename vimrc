@@ -30,8 +30,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'alvan/vim-closetag'
 Plugin 'tpope/vim-rhubarb'
-Plugin 'chrisbra/csv.vim'
-Plugin 'github/copilot.vim'
+"Plugin 'github/copilot.vim'
+Plugin 'puremourning/vimspector'
 
 call vundle#end()
 
@@ -407,6 +407,21 @@ map <Left> <C-W><
 
 " get full path to current file (like readlink -f)
 map <leader>rlf :echo expand('%:p')<CR>
+
+" Github Copilot
+map <leader>cp :Copilot panel<CR>
+let g:copilot_filetypes = {
+    \ 'rust': v:false,
+\ }
+
+" vimspector
+nmap <Leader>do <Plug>VimspectorStepOver
+nmap <Leader>di <Plug>VimspectorStepInto
+nmap <Leader>dc <Plug>VimspectorContinue
+nmap <Leader>dr <Plug>VimspectorRestart
+nmap <Leader>ds :VimspectorReset<CR>
+nmap <Leader>dd :call vimspector#Launch()<CR>
+nmap <F9> <Plug>VimspectorToggleBreakpoint
 
 " expansions
 iab tes$ Tested-by: <@>
