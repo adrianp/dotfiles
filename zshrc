@@ -17,7 +17,7 @@ export PATH="/usr/local/opt/python/libexec/bin:/usr/local/bin:$PATH"
 #export PATH="/usr/local/opt/mariadb@10.1/bin:$PATH"
 
 # Setting PATH for Python 3 installed by brew
-export PATH=/usr/local/share/python:$PATH
+export PATH=/usr/local/bin/python3:$PATH
 
 # Configuration for virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
