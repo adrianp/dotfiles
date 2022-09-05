@@ -432,9 +432,7 @@ iab cab$ Co-authored-by: <@>
 iab sob$ Signed-off-by: <@>
 iab fix$ Fixes:
 iab hw$ "Hello World!"
-iab pdb$ import pdb; pdb.set_trace()
 iab ipdb$ import ipdb; ipdb.set_trace(); pass
-iab pudb$ import pudb; pu.db
 iab cl$ console.log(
 iab st$ console.log(new Error().stack);
 iab tdt$ # TODO(adrianp):
@@ -443,3 +441,4 @@ iab dbg$ /* eslint-disable no-debugger */ debugger;
 iab #$ ####################################################################################################
 iab -$ #---------------------------------------------------------------------------------------------------
 iab ptb$ import traceback; traceback.print_exc()
+iab rdb$ from celery.contrib import rdb; rdb.set_trace(); pass
