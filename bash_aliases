@@ -11,11 +11,10 @@ alias dinstall='sudo dpkg -i'
 alias ns='echo "sudo tc qdisc add dev wlan0 root netem delay 200ms" && sudo tc qdisc change dev wlan0 root netem delay 200ms'
 alias nf='sudo tc qdisc change dev wlan0 root netem delay 0ms'
 alias osup='sudo do-release-upgrade -d'
-alias mkv='mkvirtualenv -p python2'
 alias mkv3='mkvirtualenv -p python3.7'
-alias docker='sudo docker'
 alias dup='sudo -E COMPOSE_DOCKER_CLI_BUILD=1 docker-compose up'
-alias gopro='sudo gopro webcam -r 1080 -f narrow -a'
+alias gopro='sudo gopro webcam -r 1080 -f narrow -a' # https://github.com/jschmid1/gopro_as_webcam_on_linux
+alias black='python3 -m black -l 120 -t py37' # pip3 install git+https://github.com/psf/black
 
 alias serv='sudo service'
 make-completion-wrapper _service _serv service
