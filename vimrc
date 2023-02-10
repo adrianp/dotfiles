@@ -25,12 +25,10 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'marijnh/tern_for_vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'alvan/vim-closetag'
 Plugin 'tpope/vim-rhubarb'
-"Plugin 'github/copilot.vim'
 Plugin 'puremourning/vimspector'
 
 call vundle#end()
@@ -86,7 +84,7 @@ set report=0
 "set shiftwidth=4
 
 " display right margin
-set colorcolumn=100,120
+set colorcolumn=80,100,120
 
 " display current line
 "set cursorline
